@@ -1,10 +1,12 @@
-extends Node
+extends CutsceneSystemClass
 class_name CutscenePlayer
 
 
 ## Array which all the labels in the current cutscene are stored in. Each label
 ## is a different element in the array, and their names can be found with.
 var cutscene : Array[PackedStringArray]
+
+var actors : Dictionary = {}
 
 var current_label_brace_groups : PackedVector2Array = []
 
@@ -55,10 +57,14 @@ func parse_current_item() -> void:
 			handle_wait(args)
 		"signal":
 			handle_signal(args)
+		"await":
+			handle_await(args)
 		"set":
 			handle_set(args)
 		"move":
 			handle_move(args)
+		"setpos":
+			handle_setpos(args)
 		"match":
 			handle_match(args)
 		"cam":
@@ -264,6 +270,10 @@ func handle_signal(args: Array) -> void:
 	pass
 
 
+func handle_await(args: Array) -> void:
+	pass
+
+
 func handle_set(args: Array) -> void:
 	pass
 
@@ -271,8 +281,10 @@ func handle_set(args: Array) -> void:
 func handle_move(args: Array) -> void:
 	pass
 
+
 func handle_match(args: Array) -> void:
 	pass
+
 
 func end_scene() -> void:
 	if find_label("end") == -1:
