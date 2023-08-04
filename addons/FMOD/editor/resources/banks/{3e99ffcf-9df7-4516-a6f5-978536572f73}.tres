@@ -1,0 +1,8 @@
+[gd_resource type="BankAsset" format=3 uid="uid://dc31o40stgg38"]
+
+[resource]
+file_path = "res://assets/fmodproj/foodfight/Build/Desktop/sfx.bank"
+modified_time = 1691137754
+path = "bank:/sfx"
+guid = "{3e99ffcf-9df7-4516-a6f5-978536572f73}"
+name = "sfx"

@@ -1,0 +1,8 @@
+[gd_resource type="BankAsset" format=3 uid="uid://dcu076b8x5mj1"]
+
+[resource]
+file_path = "res://assets/fmodproj/foodfight/Build/Desktop/Master.strings.bank"
+modified_time = 1691137754
+path = "bank:/Master.strings"
+guid = "{fdbecdad-24f7-011a-1779-d70ff451f4ce}"
+name = "Master.strings"
