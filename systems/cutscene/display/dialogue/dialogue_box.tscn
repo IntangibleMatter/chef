@@ -2,6 +2,21 @@
 
 [ext_resource type="Theme" uid="uid://buqfdn32wcnec" path="res://assets/resources/dialogue_theme.tres" id="1_5b0b2"]
 
+[sub_resource type="Animation" id="Animation_kms44"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/RichTextLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(112, 8)]
+}
+
 [sub_resource type="Animation" id="Animation_6sims"]
 resource_name = "speaker_in_left"
 length = 0.001
@@ -17,21 +32,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [112.0, 64.0]
-}
-
-[sub_resource type="Animation" id="Animation_kms44"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel/RichTextLabel:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(112, 8)]
 }
 
 [sub_resource type="Animation" id="Animation_fekoy"]
@@ -127,16 +127,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 112.0
 offset_top = 8.0
-offset_right = -16.0
-offset_bottom = -8.0
+offset_right = 560.0
+offset_bottom = 96.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
 text = "[center]This is a test of the [wave amp=20 rate=10]dialogue boxes in this game, isn't it obvious?[/wave]"
 scroll_active = false
-visible_characters = 72
 visible_characters_behavior = 1
-visible_ratio = 1.05882
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

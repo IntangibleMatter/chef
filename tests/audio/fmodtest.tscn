@@ -32,3 +32,5 @@ parameter_testparam = 0.0
 studio_event_emitter = NodePath("../StudioEventEmitter2D")
 event = ExtResource("2_rxomp")
 parameter_testparam = 1.0
+
+[node name="StudioListener2D" type="StudioListener2D" parent="."]
