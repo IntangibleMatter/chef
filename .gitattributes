@@ -10,3 +10,4 @@ assets/fmodproj/* filter=lfs diff=lfs merge=lfs -text
 addons/android/* filter=lfs diff=lfs merge=lfs -text
 addons/FMOD/native/lib/* filter=lfs diff=lfs merge=lfs -text
 .raw/sfx/ filter=lfs diff=lfs merge=lfs -text
+*.aup3 filter=lfs diff=lfs merge=lfs -text
