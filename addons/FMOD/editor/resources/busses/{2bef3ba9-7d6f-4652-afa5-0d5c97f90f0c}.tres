@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:252781ec34af77e9e23e410f028a62629e67dbcd12401c7373aeb1235e65c8a7
-size 155
+[gd_resource type="BusAsset" format=3 uid="uid://b2f6b26rcwhsf"]
+
+[resource]
+path = "bus:/"
+guid = "{2bef3ba9-7d6f-4652-afa5-0d5c97f90f0c}"
+name = "Master"

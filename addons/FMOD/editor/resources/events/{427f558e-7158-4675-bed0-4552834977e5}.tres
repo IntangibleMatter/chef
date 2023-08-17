@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:12ba8648397aaa9438b3ea7f5dde8ef1ee1cbc0f27c8a7edbea4a0bb4ee71d17
-size 240
+[gd_resource type="EventAsset" format=3 uid="uid://dhisk66nx7fh6"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Sfx/Veggies/Cuke/strike"
+guid = "{427f558e-7158-4675-bed0-4552834977e5}"
+name = "strike"

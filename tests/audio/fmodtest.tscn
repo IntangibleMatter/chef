@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://b3b2w36lp21td"]
 
-[ext_resource type="BankAsset" uid="uid://dc31o40stgg38" path="res://addons/FMOD/editor/resources/banks/{3e99ffcf-9df7-4516-a6f5-978536572f73}.tres" id="1_u7dy0"]
-[ext_resource type="BankAsset" uid="uid://b88fy5j6rbv7m" path="res://addons/FMOD/editor/resources/banks/{65a3ed79-558c-4d58-9130-5df105a2f256}.tres" id="1_xg0ll"]
-[ext_resource type="BankAsset" uid="uid://dcu076b8x5mj1" path="res://addons/FMOD/editor/resources/banks/{fdbecdad-24f7-011a-1779-d70ff451f4ce}.tres" id="2_icpqq"]
-[ext_resource type="EventAsset" uid="uid://cdomhp4h3vgmm" path="res://addons/FMOD/editor/resources/events/{144036a6-3e64-4a3e-a4fb-3c312ef66a33}.tres" id="2_rxomp"]
+[ext_resource type="BankAsset" uid="uid://cr88nu3uu6mbk" path="res://addons/FMOD/editor/resources/banks/{3e99ffcf-9df7-4516-a6f5-978536572f73}.tres" id="1_u7dy0"]
+[ext_resource type="BankAsset" uid="uid://cg8nh0j34q508" path="res://addons/FMOD/editor/resources/banks/{65a3ed79-558c-4d58-9130-5df105a2f256}.tres" id="1_xg0ll"]
+[ext_resource type="BankAsset" uid="uid://s51xuvj1p0v4" path="res://addons/FMOD/editor/resources/banks/{fdbecdad-24f7-011a-1779-d70ff451f4ce}.tres" id="2_icpqq"]
+[ext_resource type="EventAsset" uid="uid://cyy6drm56vbpi" path="res://addons/FMOD/editor/resources/events/{144036a6-3e64-4a3e-a4fb-3c312ef66a33}.tres" id="2_rxomp"]
 [ext_resource type="Script" path="res://tests/audio/fmodtest.gd" id="2_vlwng"]
 
 [node name="StudioBankLoader" type="StudioBankLoader"]

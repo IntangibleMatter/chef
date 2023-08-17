@@ -171,7 +171,7 @@
 	<object class="MixerBusPanner" id="{cf11aff6-daf3-4716-a4d9-d66b0da6d125}" />
 	<object class="ParameterCondition" id="{70c2ab7e-3c4f-4e43-861c-7aa635cd2395}">
 		<property name="minimum">
-			<value>1</value>
+			<value>0.98999994993209839</value>
 		</property>
 		<property name="maximum">
 			<value>1</value>

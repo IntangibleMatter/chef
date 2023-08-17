@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:73e9ac541bc76e1297559aea7beb62bd2bc6b29f1d57a7f4d5ad15a0ae96f254
-size 162
+[gd_resource type="BusAsset" format=3 uid="uid://brcp5n5qshxnm"]
+
+[resource]
+path = "bus:/Reverb"
+guid = "{ee3d83e5-7606-471c-9873-08841ee16c7f}"
+name = "Reverb"

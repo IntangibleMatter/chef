@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:48cf8f0e7c8126fc6fab7a395b47b0642309bcd5288c3a376084bd2f45fa4b49
-size 942
+[gd_resource type="EventAsset" load_steps=4 format=3 uid="uid://cyy6drm56vbpi"]
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_rqe04"]
+data1 = 1347932293
+data2 = 3538821051
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_lb13d"]
+name = "testparam"
+id = SubResource("FMOD_STUDIO_PARAMETER_ID_rqe04")
+maximum = 1.0
+guid = "{c993ae73-5301-4fd9-a2ec-d83eda350d8d}"
+
+[sub_resource type="ParameterAsset" id="ParameterAsset_d1s5f"]
+parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_lb13d")
+path = "parameter:/testparam"
+guid = "{c993ae73-5301-4fd9-a2ec-d83eda350d8d}"
+name = "testparam"
+
+[resource]
+min_distance = 1.0
+max_distance = 20.0
+parameters = {
+"{c993ae73-5301-4fd9-a2ec-d83eda350d8d}": SubResource("ParameterAsset_d1s5f")
+}
+path = "event:/Sfx/Veggies/Cuke/cukeattacktest"
+guid = "{144036a6-3e64-4a3e-a4fb-3c312ef66a33}"
+name = "cukeattacktest"

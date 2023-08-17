@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{5aec2719-dce0-48bc-9547-60ac76684be3}">
+		<property name="name">
+			<value>consecutivehits</value>
+		</property>
+		<relationship name="folder">
+			<destination>{d7d1671a-9209-44a5-957f-0ff692c093a1}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{1d4b5f1a-4fb1-4d5a-9d1e-56355295f159}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{1d4b5f1a-4fb1-4d5a-9d1e-56355295f159}">
+		<property name="maximum">
+			<value>17</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

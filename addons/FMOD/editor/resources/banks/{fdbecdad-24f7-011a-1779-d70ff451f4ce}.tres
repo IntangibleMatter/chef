@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:25d0ce876aaf3477e4d87cabfb7a80a9aefa61fd7e2a997e238de3997ef1d56e
-size 287
+[gd_resource type="BankAsset" format=3 uid="uid://s51xuvj1p0v4"]
+
+[resource]
+file_path = "res://assets/banks/Desktop/Master.strings.bank"
+modified_time = 1692268519
+path = "bank:/Master.strings"
+guid = "{fdbecdad-24f7-011a-1779-d70ff451f4ce}"
+name = "Master.strings"

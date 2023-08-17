@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:38fe59a01e2e042ce3bdcbcdbc94cef593e9ad575629d93c42e2ae9170a42d92
-size 1001
+key,en,_speaker,_notes
+camp_sitting_alone_1,They're ignoring you.,narrator,
+camp_sitting_alone_2,"You're in a place where you might fit in at all, and everryone is ignoring you.",narrator,
+camp_sitting_alone_3,This is how it always happens. You should've given up on having friends by now.,narrator,
+camp_sitting_alone_4,Why'd you even come here? You [wave amp=20]knew[/wave] that this was going to happen.,narrator,
+camp_sitting_alone_5,I need to get out of my comfort zone. I can't just stay in my room all the time.,player,
+camp_sitting_alone_6,"Here, I'll reach out to someone now.",player,
+camp_sitting_alone_opt_reachout,Talk to the girls,player,
+camp_sitting_alone_opt_isolate,Keep to yourself,player,
+,,
+camp_reachout_1,Hey! How're you guys doing?,player,
+camp_reachout_2,"Overheard you talking about some stuff but couldn't quite tell what, so I came over!",playerr,
+camp_reachout_3,"Oh! Uh.. hey {{name}}!",greta,
+camp_reachout_4,"We were just talking about some stuff from the show",greta,
