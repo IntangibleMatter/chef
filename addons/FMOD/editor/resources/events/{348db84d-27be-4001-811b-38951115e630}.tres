@@ -1,9 +1,3 @@
-[gd_resource type="EventAsset" format=3 uid="uid://dgirq21d2cj4i"]
-
-[resource]
-is_oneshot = true
-min_distance = 1.0
-max_distance = 20.0
-path = "event:/Sfx/Veggies/Cuke/kill"
-guid = "{348db84d-27be-4001-811b-38951115e630}"
-name = "kill"
+version https://git-lfs.github.com/spec/v1
+oid sha256:52aff8097d1d6975735492a524fb1d78c3cc9e044d8ab7cca4ba8601270d289b
+size 236

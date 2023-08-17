@@ -1,20 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{5efbf559-c94f-437d-b739-5f408eebb995}">
-		<property name="assetPath">
-			<value>sfx/veg/cuketemp/strike03.wav</value>
-		</property>
-		<property name="frequencyInKHz">
-			<value>48</value>
-		</property>
-		<property name="channelCount">
-			<value>1</value>
-		</property>
-		<property name="length">
-			<value>0.10977083333333333</value>
-		</property>
-		<relationship name="masterAssetFolder">
-			<destination>{33fdaa5c-65c0-41f7-aa9a-e28d33fc0c36}</destination>
-		</relationship>
-	</object>
-</objects>
+version https://git-lfs.github.com/spec/v1
+oid sha256:da13d3485292975d257637d0b22321ce368d137af7eb473f43b077fe809677b3
+size 617

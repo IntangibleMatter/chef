@@ -1,9 +1,3 @@
-[gd_resource type="EventAsset" format=3 uid="uid://cgsf8i84g0dr3"]
-
-[resource]
-is_oneshot = true
-min_distance = 1.0
-max_distance = 20.0
-path = "event:/Sfx/Veggies/Cuke/hit"
-guid = "{758e262f-5d23-40ea-bab1-662b1a07499d}"
-name = "hit"
+version https://git-lfs.github.com/spec/v1
+oid sha256:5f36b66ec636749faaad8dde704a713affd6f31f430b1ec41e5714874bbe9b54
+size 234

@@ -1,24 +1,3 @@
-[remap]
-
-importer="wav"
-type="AudioStreamWAV"
-uid="uid://cksh8uwp0kghm"
-path="res://.godot/imported/hit10.wav-42abcd11ddf068578e0515282a99be89.sample"
-
-[deps]
-
-source_file="res://assets/fmodproj/foodfight/Assets/sfx/veg/cuketemp/hit10.wav"
-dest_files=["res://.godot/imported/hit10.wav-42abcd11ddf068578e0515282a99be89.sample"]
-
-[params]
-
-force/8_bit=false
-force/mono=false
-force/max_rate=false
-force/max_rate_hz=44100
-edit/trim=false
-edit/normalize=false
-edit/loop_mode=0
-edit/loop_begin=0
-edit/loop_end=-1
-compress/mode=0
+version https://git-lfs.github.com/spec/v1
+oid sha256:d6a5209279c95a184f74eb5ce8c0ec780be3891db2e10449340979da34605290
+size 523

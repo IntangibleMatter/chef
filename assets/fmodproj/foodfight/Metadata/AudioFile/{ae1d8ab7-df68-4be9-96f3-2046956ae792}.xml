@@ -1,20 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{ae1d8ab7-df68-4be9-96f3-2046956ae792}">
-		<property name="assetPath">
-			<value>sfx/veg/cuketemp/hit07.wav</value>
-		</property>
-		<property name="frequencyInKHz">
-			<value>48</value>
-		</property>
-		<property name="channelCount">
-			<value>1</value>
-		</property>
-		<property name="length">
-			<value>0.095979166666666671</value>
-		</property>
-		<relationship name="masterAssetFolder">
-			<destination>{33fdaa5c-65c0-41f7-aa9a-e28d33fc0c36}</destination>
-		</relationship>
-	</object>
-</objects>
+version https://git-lfs.github.com/spec/v1
+oid sha256:295856420644482210c2cabc2ba863379bfe9b3acb30a9d11eb04743793a396e
+size 615

@@ -1,20 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{4f9d9a07-8ece-41b8-abfd-7fa0787a3d0a}">
-		<property name="assetPath">
-			<value>sfx/veg/cuketemp/kill05.wav</value>
-		</property>
-		<property name="frequencyInKHz">
-			<value>48</value>
-		</property>
-		<property name="channelCount">
-			<value>1</value>
-		</property>
-		<property name="length">
-			<value>0.1189375</value>
-		</property>
-		<relationship name="masterAssetFolder">
-			<destination>{33fdaa5c-65c0-41f7-aa9a-e28d33fc0c36}</destination>
-		</relationship>
-	</object>
-</objects>
+version https://git-lfs.github.com/spec/v1
+oid sha256:03dcb793a9a7b9b342db29805409c658fec1a78a64c74c46997edc0dec81bac9
+size 605

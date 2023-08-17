@@ -1,36 +1,3 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3b2w36lp21td"]
-
-[ext_resource type="BankAsset" uid="uid://dc31o40stgg38" path="res://addons/FMOD/editor/resources/banks/{3e99ffcf-9df7-4516-a6f5-978536572f73}.tres" id="1_u7dy0"]
-[ext_resource type="BankAsset" uid="uid://b88fy5j6rbv7m" path="res://addons/FMOD/editor/resources/banks/{65a3ed79-558c-4d58-9130-5df105a2f256}.tres" id="1_xg0ll"]
-[ext_resource type="BankAsset" uid="uid://dcu076b8x5mj1" path="res://addons/FMOD/editor/resources/banks/{fdbecdad-24f7-011a-1779-d70ff451f4ce}.tres" id="2_icpqq"]
-[ext_resource type="EventAsset" uid="uid://cdomhp4h3vgmm" path="res://addons/FMOD/editor/resources/events/{144036a6-3e64-4a3e-a4fb-3c312ef66a33}.tres" id="2_rxomp"]
-[ext_resource type="Script" path="res://tests/audio/fmodtest.gd" id="2_vlwng"]
-
-[node name="StudioBankLoader" type="StudioBankLoader"]
-load_on = 1
-num_banks = 3
-bank_0 = ExtResource("1_xg0ll")
-bank_1 = ExtResource("2_icpqq")
-bank_2 = ExtResource("1_u7dy0")
-script = ExtResource("2_vlwng")
-even = ExtResource("2_rxomp")
-
-[node name="StudioEventEmitter2D" type="StudioEventEmitter2D" parent="."]
-play_event = 2
-stop_event = 3
-event = ExtResource("2_rxomp")
-preload_samples = true
-trigger_once = true
-parameter_testparam = 1.0
-
-[node name="StudioParameterTrigger" type="StudioParameterTrigger" parent="."]
-studio_event_emitter = NodePath("../StudioEventEmitter2D")
-event = ExtResource("2_rxomp")
-parameter_testparam = 0.0
-
-[node name="StudioParameterTrigger2" type="StudioParameterTrigger" parent="."]
-studio_event_emitter = NodePath("../StudioEventEmitter2D")
-event = ExtResource("2_rxomp")
-parameter_testparam = 1.0
-
-[node name="StudioListener2D" type="StudioListener2D" parent="."]
+version https://git-lfs.github.com/spec/v1
+oid sha256:f1e37b13295b6bad21cbb0d5ab07d7aaf0998ec1c7227f6ed0808fe440a9fa91
+size 1696

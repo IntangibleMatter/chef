@@ -1,17 +1,3 @@
-[remap]
-
-importer="csv_translation"
-type="Translation"
-uid="uid://xcmed7yie5cp"
-
-[deps]
-
-files=["res://assets/text/text.en.translation", "res://assets/text/text..translation", "res://assets/text/text..translation", "res://assets/text/text..translation"]
-
-source_file="res://assets/text/text.csv"
-dest_files=["res://assets/text/text.en.translation", "res://assets/text/text..translation", "res://assets/text/text..translation", "res://assets/text/text..translation"]
-
-[params]
-
-compress=true
-delimiter=0
+version https://git-lfs.github.com/spec/v1
+oid sha256:26bff7ce808bfa48f15f92cf979f463819e1b11e5dd594490b743a4265eecb3c
+size 503

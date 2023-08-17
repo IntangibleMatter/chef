@@ -1,6 +1,3 @@
-class_name CutsceneSystemClass
-extends Node
-
-## This class is literally just here to have an easier time adding cutscene
-## items to the scene tree. Just a bit of organization. Prolly a better
-## way to do this but it's 11:50 and idc anymore.
+version https://git-lfs.github.com/spec/v1
+oid sha256:27de5453421b2adc6327a88aac1f7426aaaa0afe29f31f79ac2cbd3413a5db23
+size 243

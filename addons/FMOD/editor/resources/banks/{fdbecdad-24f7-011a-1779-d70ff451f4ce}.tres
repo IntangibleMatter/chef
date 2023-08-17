@@ -1,8 +1,3 @@
-[gd_resource type="BankAsset" format=3 uid="uid://dcu076b8x5mj1"]
-
-[resource]
-file_path = "res://assets/fmodproj/foodfight/Build/Desktop/Master.strings.bank"
-modified_time = 1691137754
-path = "bank:/Master.strings"
-guid = "{fdbecdad-24f7-011a-1779-d70ff451f4ce}"
-name = "Master.strings"
+version https://git-lfs.github.com/spec/v1
+oid sha256:25d0ce876aaf3477e4d87cabfb7a80a9aefa61fd7e2a997e238de3997ef1d56e
+size 287
