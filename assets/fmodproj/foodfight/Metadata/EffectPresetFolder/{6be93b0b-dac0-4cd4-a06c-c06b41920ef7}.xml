@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8846190a35a1f5d6ad911e69127daf9d1630410ca27bc8a8bdfac64a1ff9589c
-size 186
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MasterEffectPresetFolder" id="{6be93b0b-dac0-4cd4-a06c-c06b41920ef7}" />
+</objects>

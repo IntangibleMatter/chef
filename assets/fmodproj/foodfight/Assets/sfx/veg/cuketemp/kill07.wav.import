@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6c195e9768b1b5ac0767aacfbe43749d2aa8cc09c331dfc86b47d04535ca0d65
-size 526
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b7k306r1exn3d"
+path="res://.godot/imported/kill07.wav-7c54a36ca4c0c3cc9212e79b0fe393e6.sample"
+
+[deps]
+
+source_file="res://assets/fmodproj/foodfight/Assets/sfx/veg/cuketemp/kill07.wav"
+dest_files=["res://.godot/imported/kill07.wav-7c54a36ca4c0c3cc9212e79b0fe393e6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

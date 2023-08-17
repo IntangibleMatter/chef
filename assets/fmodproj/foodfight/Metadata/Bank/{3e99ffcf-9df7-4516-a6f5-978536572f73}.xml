@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:80c2696a60d75f55c620476b774cac6a3b3a110f1e2e747c0fcbffc3056d6806
-size 354
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="Bank" id="{3e99ffcf-9df7-4516-a6f5-978536572f73}">
+		<property name="name">
+			<value>sfx</value>
+		</property>
+		<relationship name="folder">
+			<destination>{32cf0c84-051f-4aa7-b063-b64d24845381}</destination>
+		</relationship>
+	</object>
+</objects>

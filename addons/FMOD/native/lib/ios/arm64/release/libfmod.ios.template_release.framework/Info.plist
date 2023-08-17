@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:226651b5629246bc6ce11ded94ba326b053bd20744027935770aa0411936b324
-size 757
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+<key>CFBundleShortVersionString</key>
+<string>1.0</string>
+<key>CFBundleIdentifier</key>
+<string>com.gdextension.framework.libfmod.ios.template_release</string>
+<key>CFBundleName</key>
+<string>libfmod.ios.template_release</string>
+<key>CFBundleExecutable</key>
+<string>libfmod.ios.template_release</string>
+<key>DTPlatformName</key>
+<string>iphoneos</string>
+<key>CFBundleInfoDictionaryVersion</key>
+<string>6.0</string>
+<key>CFBundleVersion</key>
+<string>1</string>
+<key>CFBundlePackageType</key>
+<string>FMWK</string>
+<key>MinimumOSVersion</key>
+<string>11.0</string>
+</dict>
+</plist>

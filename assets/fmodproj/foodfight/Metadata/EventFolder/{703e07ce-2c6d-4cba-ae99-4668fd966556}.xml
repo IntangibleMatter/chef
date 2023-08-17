@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fa2d0641c9b195299d6b80575810a13f1c87b9db43488e6a9d2b571282e41c47
-size 362
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EventFolder" id="{703e07ce-2c6d-4cba-ae99-4668fd966556}">
+		<property name="name">
+			<value>Cuke</value>
+		</property>
+		<relationship name="folder">
+			<destination>{bdf71761-5be9-45a7-8b11-e6b86c8a85e6}</destination>
+		</relationship>
+	</object>
+</objects>

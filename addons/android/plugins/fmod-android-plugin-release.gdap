@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:699f9a6669072c069e92301849236f6a8a254052eb54c79ec239b410057fbeba
-size 167
+[config]
+
+name="FmodAndroidPlugin"
+binary_type="local"
+binary="fmod-android-plugin-release.aar"
+
+[dependencies]
+
+local=["lib/fmod.jar"]
+remote=[]
+custom_maven_repos=[]
