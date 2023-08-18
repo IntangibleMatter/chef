@@ -1,6 +1,6 @@
 # Godot 4+ specific ignores
 .godot/
 *.translation
-./assets/fmodproj/foodfight/.user/
-./assets/fmodproj/foodfight/.cache/
-./assets/fmodproj/foodfight/.unsaved/
+assets/fmodproj/foodfight/.user/
+assets/fmodproj/foodfight/.cache/
+assets/fmodproj/foodfight/.unsaved/
