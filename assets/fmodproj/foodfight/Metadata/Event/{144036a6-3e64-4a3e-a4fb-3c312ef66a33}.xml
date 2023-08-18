@@ -5,7 +5,7 @@
 			<value>cukeattacktest</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{703e07ce-2c6d-4cba-ae99-4668fd966556}</destination>
@@ -53,7 +53,7 @@
 			<destination>{811faf37-bff2-420b-b859-c6e0adf21469}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{2bef3ba9-7d6f-4652-afa5-0d5c97f90f0c}</destination>
+			<destination>{23e8cee4-c643-4442-8346-a53fef50f7ca}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{0dcfd6db-46aa-43f9-ad95-1114af876cac}" />
@@ -158,6 +158,7 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{9b799073-065c-4f9b-b7b7-544f8c04d238}">
 		<relationship name="effects">
+			<destination>{c018c42e-8cf5-4c1a-83cb-3c6467d51b38}</destination>
 			<destination>{6a56bd37-9d81-41f7-aff3-d56ea4a226c5}</destination>
 		</relationship>
 	</object>
@@ -179,6 +180,11 @@
 		<relationship name="parameter">
 			<destination>{c993ae73-5301-4fd9-a2ec-d83eda350d8d}</destination>
 		</relationship>
+	</object>
+	<object class="SpatialiserEffect" id="{c018c42e-8cf5-4c1a-83cb-3c6467d51b38}">
+		<property name="distanceRolloffType">
+			<value>1</value>
+		</property>
 	</object>
 	<object class="MixerBusFader" id="{6a56bd37-9d81-41f7-aff3-d56ea4a226c5}" />
 	<object class="MixerBusFader" id="{97b2ac42-0b6b-48a0-ace9-65ed36d8ebbc}" />

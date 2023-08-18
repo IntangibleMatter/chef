@@ -269,7 +269,9 @@ func handle_wait(args: Array) -> void:
 func handle_signal(args: Array) -> void:
 	pass
 
-
+func handle_setpos(args: Array) -> void:
+	pass
+  
 func handle_await(args: Array) -> void:
 	pass
 

@@ -1,0 +1,27 @@
+[gd_resource type="EventAsset" load_steps=4 format=3 uid="uid://cwujs0wwwx5kb"]
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_cnimo"]
+data1 = 656848344
+data2 = 1415213001
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_kkpy7"]
+name = "progress"
+id = SubResource("FMOD_STUDIO_PARAMETER_ID_cnimo")
+maximum = 1.0
+guid = "{8f382832-c2a8-4627-9729-8f825438c60c}"
+
+[sub_resource type="ParameterAsset" id="ParameterAsset_7nljt"]
+parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_kkpy7")
+path = "parameter:/progress"
+guid = "{8f382832-c2a8-4627-9729-8f825438c60c}"
+name = "progress"
+
+[resource]
+min_distance = 1.0
+max_distance = 20.0
+parameters = {
+"{8f382832-c2a8-4627-9729-8f825438c60c}": SubResource("ParameterAsset_7nljt")
+}
+path = "event:/music/tutorial"
+guid = "{a9f30754-ead2-4358-9ded-1674d70ab328}"
+name = "tutorial"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3b2w36lp21td"]
+[gd_scene load_steps=11 format=3 uid="uid://b3b2w36lp21td"]
 
 [ext_resource type="BankAsset" uid="uid://cr88nu3uu6mbk" path="res://addons/FMOD/editor/resources/banks/{3e99ffcf-9df7-4516-a6f5-978536572f73}.tres" id="1_u7dy0"]
 [ext_resource type="BankAsset" uid="uid://cg8nh0j34q508" path="res://addons/FMOD/editor/resources/banks/{65a3ed79-558c-4d58-9130-5df105a2f256}.tres" id="1_xg0ll"]
@@ -6,12 +6,46 @@
 [ext_resource type="EventAsset" uid="uid://cyy6drm56vbpi" path="res://addons/FMOD/editor/resources/events/{144036a6-3e64-4a3e-a4fb-3c312ef66a33}.tres" id="2_rxomp"]
 [ext_resource type="Script" path="res://tests/audio/fmodtest.gd" id="2_vlwng"]
 
+[sub_resource type="BankAsset" id="BankAsset_lm1ks"]
+file_path = "res://assets/banks/Desktop/music.bank"
+modified_time = 1692310054
+path = "bank:/music"
+guid = "{84515006-268b-4eb4-9c7a-6bc79bd8ce6f}"
+name = "music"
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_cnimo"]
+data1 = 656848344
+data2 = 1415213001
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_kkpy7"]
+name = "progress"
+id = SubResource("FMOD_STUDIO_PARAMETER_ID_cnimo")
+maximum = 1.0
+guid = "{8f382832-c2a8-4627-9729-8f825438c60c}"
+
+[sub_resource type="ParameterAsset" id="ParameterAsset_7nljt"]
+parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_kkpy7")
+path = "parameter:/progress"
+guid = "{8f382832-c2a8-4627-9729-8f825438c60c}"
+name = "progress"
+
+[sub_resource type="EventAsset" id="EventAsset_v7o3p"]
+min_distance = 1.0
+max_distance = 20.0
+parameters = {
+"{8f382832-c2a8-4627-9729-8f825438c60c}": SubResource("ParameterAsset_7nljt")
+}
+path = "event:/music/tutorial"
+guid = "{a9f30754-ead2-4358-9ded-1674d70ab328}"
+name = "tutorial"
+
 [node name="StudioBankLoader" type="StudioBankLoader"]
 load_on = 1
-num_banks = 3
+num_banks = 4
 bank_0 = ExtResource("1_xg0ll")
 bank_1 = ExtResource("2_icpqq")
 bank_2 = ExtResource("1_u7dy0")
+bank_3 = SubResource("BankAsset_lm1ks")
 script = ExtResource("2_vlwng")
 even = ExtResource("2_rxomp")
 
@@ -21,7 +55,7 @@ stop_event = 3
 event = ExtResource("2_rxomp")
 preload_samples = true
 trigger_once = true
-parameter_testparam = 1.0
+parameter_testparam = 0.84
 
 [node name="StudioParameterTrigger" type="StudioParameterTrigger" parent="."]
 studio_event_emitter = NodePath("../StudioEventEmitter2D")
@@ -34,3 +68,8 @@ event = ExtResource("2_rxomp")
 parameter_testparam = 1.0
 
 [node name="StudioListener2D" type="StudioListener2D" parent="."]
+
+[node name="StudioEventEmitter2D2" type="StudioEventEmitter2D" parent="."]
+play_event = 2
+stop_event = 3
+event = SubResource("EventAsset_v7o3p")

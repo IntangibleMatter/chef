@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{23e8cee4-c643-4442-8346-a53fef50f7ca}">
+		<property name="name">
+			<value>cuke</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{64e7d915-d99b-4cc9-a42d-320d1cc0be84}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{20b6719e-4183-4e4d-9060-822353dcf09c}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{9b79e751-0f7c-4efe-9570-44c11dd95a5b}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{64e7d915-d99b-4cc9-a42d-320d1cc0be84}">
+		<relationship name="effects">
+			<destination>{7cca05bf-5c1b-414e-80cd-a8f45cdf5310}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{20b6719e-4183-4e4d-9060-822353dcf09c}" />
+	<object class="MixerBusFader" id="{7cca05bf-5c1b-414e-80cd-a8f45cdf5310}" />
+</objects>

@@ -1,174 +1,207 @@
-[gd_resource type="ProjectCache" load_steps=13 format=3 uid="uid://de1nabo40am34"]
+[gd_resource type="ProjectCache" load_steps=19 format=3 uid="uid://de1nabo40am34"]
 
-[sub_resource type="BankAsset" id="BankAsset_w8cfy"]
-file_path = "res://assets/banks/Desktop/Master.bank"
-modified_time = 1692268519
-path = "bank:/Master"
-guid = "{65a3ed79-558c-4d58-9130-5df105a2f256}"
-name = "Master"
+[ext_resource type="BankAsset" uid="uid://cg8nh0j34q508" path="res://addons/FMOD/editor/resources/banks/{65a3ed79-558c-4d58-9130-5df105a2f256}.tres" id="1_vf44w"]
+[ext_resource type="BankAsset" uid="uid://s51xuvj1p0v4" path="res://addons/FMOD/editor/resources/banks/{fdbecdad-24f7-011a-1779-d70ff451f4ce}.tres" id="2_e7de2"]
+[ext_resource type="BankAsset" uid="uid://cr88nu3uu6mbk" path="res://addons/FMOD/editor/resources/banks/{3e99ffcf-9df7-4516-a6f5-978536572f73}.tres" id="3_usvif"]
+[ext_resource type="BusAsset" uid="uid://b2f6b26rcwhsf" path="res://addons/FMOD/editor/resources/busses/{2bef3ba9-7d6f-4652-afa5-0d5c97f90f0c}.tres" id="4_pe72x"]
+[ext_resource type="BusAsset" uid="uid://brcp5n5qshxnm" path="res://addons/FMOD/editor/resources/busses/{ee3d83e5-7606-471c-9873-08841ee16c7f}.tres" id="5_con8j"]
+[ext_resource type="EventAsset" uid="uid://cyy6drm56vbpi" path="res://addons/FMOD/editor/resources/events/{144036a6-3e64-4a3e-a4fb-3c312ef66a33}.tres" id="6_1ikws"]
+[ext_resource type="EventAsset" uid="uid://cw155uwymodwn" path="res://addons/FMOD/editor/resources/events/{758e262f-5d23-40ea-bab1-662b1a07499d}.tres" id="7_lsfn1"]
+[ext_resource type="EventAsset" uid="uid://dxhet7mdb6f41" path="res://addons/FMOD/editor/resources/events/{348db84d-27be-4001-811b-38951115e630}.tres" id="8_grl0p"]
+[ext_resource type="EventAsset" uid="uid://dhisk66nx7fh6" path="res://addons/FMOD/editor/resources/events/{427f558e-7158-4675-bed0-4552834977e5}.tres" id="9_bbv8c"]
 
-[sub_resource type="BankAsset" id="BankAsset_s05p4"]
-file_path = "res://assets/banks/Desktop/Master.strings.bank"
-modified_time = 1692268519
-path = "bank:/Master.strings"
-guid = "{fdbecdad-24f7-011a-1779-d70ff451f4ce}"
-name = "Master.strings"
+[sub_resource type="BankAsset" id="BankAsset_lm1ks"]
+file_path = "res://assets/banks/Desktop/music.bank"
+modified_time = 1692310054
+path = "bank:/music"
+guid = "{84515006-268b-4eb4-9c7a-6bc79bd8ce6f}"
+name = "music"
 
-[sub_resource type="BankAsset" id="BankAsset_8sohe"]
-file_path = "res://assets/banks/Desktop/sfx.bank"
-modified_time = 1692268519
-path = "bank:/sfx"
-guid = "{3e99ffcf-9df7-4516-a6f5-978536572f73}"
-name = "sfx"
+[sub_resource type="BusAsset" id="BusAsset_1qhdb"]
+path = "bus:/game_sfx/enemies/cuke"
+guid = "{23e8cee4-c643-4442-8346-a53fef50f7ca}"
+name = "cuke"
 
-[sub_resource type="BusAsset" id="BusAsset_2o2vd"]
-path = "bus:/Reverb"
-guid = "{ee3d83e5-7606-471c-9873-08841ee16c7f}"
-name = "Reverb"
+[sub_resource type="BusAsset" id="BusAsset_p6w25"]
+path = "bus:/game_sfx/enemies"
+guid = "{9b79e751-0f7c-4efe-9570-44c11dd95a5b}"
+name = "enemies"
 
-[sub_resource type="BusAsset" id="BusAsset_h1fjv"]
-path = "bus:/"
-guid = "{2bef3ba9-7d6f-4652-afa5-0d5c97f90f0c}"
-name = "Master"
+[sub_resource type="BusAsset" id="BusAsset_vwabd"]
+path = "bus:/game_sfx"
+guid = "{bd2938ed-8e11-49c3-9d01-f61bc18d7910}"
+name = "game_sfx"
 
-[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_rqe04"]
-data1 = 1347932293
-data2 = 3538821051
+[sub_resource type="BusAsset" id="BusAsset_4wmio"]
+path = "bus:/music"
+guid = "{ec04e966-888a-407f-9673-7f27674d4992}"
+name = "music"
 
-[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_lb13d"]
-name = "testparam"
-id = SubResource("FMOD_STUDIO_PARAMETER_ID_rqe04")
+[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_cnimo"]
+data1 = 656848344
+data2 = 1415213001
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_kkpy7"]
+name = "progress"
+id = SubResource("FMOD_STUDIO_PARAMETER_ID_cnimo")
 maximum = 1.0
-guid = "{c993ae73-5301-4fd9-a2ec-d83eda350d8d}"
+guid = "{8f382832-c2a8-4627-9729-8f825438c60c}"
 
-[sub_resource type="ParameterAsset" id="ParameterAsset_d1s5f"]
-parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_lb13d")
-path = "parameter:/testparam"
-guid = "{c993ae73-5301-4fd9-a2ec-d83eda350d8d}"
-name = "testparam"
+[sub_resource type="ParameterAsset" id="ParameterAsset_7nljt"]
+parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_kkpy7")
+path = "parameter:/progress"
+guid = "{8f382832-c2a8-4627-9729-8f825438c60c}"
+name = "progress"
 
-[sub_resource type="EventAsset" id="EventAsset_54t3v"]
+[sub_resource type="EventAsset" id="EventAsset_v7o3p"]
 min_distance = 1.0
 max_distance = 20.0
 parameters = {
-"{c993ae73-5301-4fd9-a2ec-d83eda350d8d}": SubResource("ParameterAsset_d1s5f")
+"{8f382832-c2a8-4627-9729-8f825438c60c}": SubResource("ParameterAsset_7nljt")
 }
-path = "event:/Sfx/Veggies/Cuke/cukeattacktest"
-guid = "{144036a6-3e64-4a3e-a4fb-3c312ef66a33}"
-name = "cukeattacktest"
-
-[sub_resource type="EventAsset" id="EventAsset_nkaw8"]
-is_oneshot = true
-min_distance = 1.0
-max_distance = 20.0
-path = "event:/Sfx/Veggies/Cuke/hit"
-guid = "{758e262f-5d23-40ea-bab1-662b1a07499d}"
-name = "hit"
-
-[sub_resource type="EventAsset" id="EventAsset_xf1je"]
-is_oneshot = true
-min_distance = 1.0
-max_distance = 20.0
-path = "event:/Sfx/Veggies/Cuke/kill"
-guid = "{348db84d-27be-4001-811b-38951115e630}"
-name = "kill"
-
-[sub_resource type="EventAsset" id="EventAsset_7br3v"]
-is_oneshot = true
-min_distance = 1.0
-max_distance = 20.0
-path = "event:/Sfx/Veggies/Cuke/strike"
-guid = "{427f558e-7158-4675-bed0-4552834977e5}"
-name = "strike"
+path = "event:/music/tutorial"
+guid = "{a9f30754-ead2-4358-9ded-1674d70ab328}"
+name = "tutorial"
 
 [resource]
 banks = {
-"{3e99ffcf-9df7-4516-a6f5-978536572f73}": SubResource("BankAsset_8sohe"),
-"{65a3ed79-558c-4d58-9130-5df105a2f256}": SubResource("BankAsset_w8cfy"),
-"{fdbecdad-24f7-011a-1779-d70ff451f4ce}": SubResource("BankAsset_s05p4")
+"{3e99ffcf-9df7-4516-a6f5-978536572f73}": ExtResource("3_usvif"),
+"{65a3ed79-558c-4d58-9130-5df105a2f256}": ExtResource("1_vf44w"),
+"{84515006-268b-4eb4-9c7a-6bc79bd8ce6f}": SubResource("BankAsset_lm1ks"),
+"{fdbecdad-24f7-011a-1779-d70ff451f4ce}": ExtResource("2_e7de2")
 }
 events = {
-"{144036a6-3e64-4a3e-a4fb-3c312ef66a33}": SubResource("EventAsset_54t3v"),
-"{348db84d-27be-4001-811b-38951115e630}": SubResource("EventAsset_xf1je"),
-"{427f558e-7158-4675-bed0-4552834977e5}": SubResource("EventAsset_7br3v"),
-"{758e262f-5d23-40ea-bab1-662b1a07499d}": SubResource("EventAsset_nkaw8")
+"{144036a6-3e64-4a3e-a4fb-3c312ef66a33}": ExtResource("6_1ikws"),
+"{348db84d-27be-4001-811b-38951115e630}": ExtResource("8_grl0p"),
+"{427f558e-7158-4675-bed0-4552834977e5}": ExtResource("9_bbv8c"),
+"{758e262f-5d23-40ea-bab1-662b1a07499d}": ExtResource("7_lsfn1"),
+"{a9f30754-ead2-4358-9ded-1674d70ab328}": SubResource("EventAsset_v7o3p")
+}
+snapshots = {
+"{69e10428-b340-4bbd-9d44-e5c58c596502}": 0
 }
 busses = {
-"{2bef3ba9-7d6f-4652-afa5-0d5c97f90f0c}": SubResource("BusAsset_h1fjv"),
-"{ee3d83e5-7606-471c-9873-08841ee16c7f}": SubResource("BusAsset_2o2vd")
+"{23e8cee4-c643-4442-8346-a53fef50f7ca}": SubResource("BusAsset_1qhdb"),
+"{2bef3ba9-7d6f-4652-afa5-0d5c97f90f0c}": ExtResource("4_pe72x"),
+"{9b79e751-0f7c-4efe-9570-44c11dd95a5b}": SubResource("BusAsset_p6w25"),
+"{bd2938ed-8e11-49c3-9d01-f61bc18d7910}": SubResource("BusAsset_vwabd"),
+"{ec04e966-888a-407f-9673-7f27674d4992}": SubResource("BusAsset_4wmio"),
+"{ee3d83e5-7606-471c-9873-08841ee16c7f}": ExtResource("5_con8j")
 }
 bank_tree = [{
 "children": [],
 "item_type": 3,
-"node_name": "Master",
-"path": "bank:/Master",
-"resource": SubResource("BankAsset_w8cfy")
+"node_name": "master",
+"path": "bank:/master",
+"resource": ExtResource("1_vf44w")
 }, {
 "children": [],
 "item_type": 3,
-"node_name": "Master.strings",
-"path": "bank:/Master.strings",
-"resource": SubResource("BankAsset_s05p4")
+"node_name": "master.strings",
+"path": "bank:/master.strings",
+"resource": ExtResource("2_e7de2")
+}, {
+"children": [],
+"item_type": 3,
+"node_name": "music",
+"path": "bank:/music",
+"resource": SubResource("BankAsset_lm1ks")
 }, {
 "children": [],
 "item_type": 3,
 "node_name": "sfx",
 "path": "bank:/sfx",
-"resource": SubResource("BankAsset_8sohe")
+"resource": ExtResource("3_usvif")
 }]
 event_tree = [{
+"children": [{
+"children": [],
+"item_type": 1,
+"node_name": "tutorial",
+"path": "event:/music/tutorial",
+"resource": SubResource("EventAsset_v7o3p")
+}],
+"item_type": 7,
+"node_name": "music",
+"path": "",
+"resource": null
+}, {
 "children": [{
 "children": [{
 "children": [{
 "children": [],
 "item_type": 1,
 "node_name": "cukeattacktest",
-"path": "event:/Sfx/Veggies/Cuke/cukeattacktest",
-"resource": SubResource("EventAsset_54t3v")
+"path": "event:/sfx/veg/cuke/cukeattacktest",
+"resource": ExtResource("6_1ikws")
 }, {
 "children": [],
 "item_type": 1,
 "node_name": "hit",
-"path": "event:/Sfx/Veggies/Cuke/hit",
-"resource": SubResource("EventAsset_nkaw8")
+"path": "event:/sfx/veg/cuke/hit",
+"resource": ExtResource("7_lsfn1")
 }, {
 "children": [],
 "item_type": 1,
 "node_name": "kill",
-"path": "event:/Sfx/Veggies/Cuke/kill",
-"resource": SubResource("EventAsset_xf1je")
+"path": "event:/sfx/veg/cuke/kill",
+"resource": ExtResource("8_grl0p")
 }, {
 "children": [],
 "item_type": 1,
 "node_name": "strike",
-"path": "event:/Sfx/Veggies/Cuke/strike",
-"resource": SubResource("EventAsset_7br3v")
+"path": "event:/sfx/veg/cuke/strike",
+"resource": ExtResource("9_bbv8c")
 }],
 "item_type": 7,
-"node_name": "Cuke",
+"node_name": "cuke",
 "path": "",
 "resource": null
 }],
 "item_type": 7,
-"node_name": "Veggies",
+"node_name": "veg",
 "path": "",
 "resource": null
 }],
 "item_type": 7,
-"node_name": "Sfx",
+"node_name": "sfx",
 "path": "",
 "resource": null
 }]
 bus_tree = [{
 "children": [{
+"children": [{
+"children": [{
+"children": [],
+"item_type": 4,
+"node_name": "cuke",
+"path": "bus:/game_sfx/enemies/cuke",
+"resource": SubResource("BusAsset_1qhdb")
+}],
+"item_type": 4,
+"node_name": "enemies",
+"path": "bus:/game_sfx/enemies",
+"resource": SubResource("BusAsset_p6w25")
+}],
+"item_type": 4,
+"node_name": "game_sfx",
+"path": "bus:/game_sfx",
+"resource": SubResource("BusAsset_vwabd")
+}, {
+"children": [],
+"item_type": 4,
+"node_name": "music",
+"path": "bus:/music",
+"resource": SubResource("BusAsset_4wmio")
+}, {
 "children": [],
 "item_type": 4,
 "node_name": "Reverb",
 "path": "bus:/Reverb",
-"resource": SubResource("BusAsset_2o2vd")
+"resource": ExtResource("5_con8j")
 }],
 "item_type": 4,
 "node_name": "bus:",
 "path": "bus:/",
-"resource": SubResource("BusAsset_h1fjv")
+"resource": ExtResource("4_pe72x")
 }]

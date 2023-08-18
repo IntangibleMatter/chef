@@ -1,27 +1,28 @@
 [gd_resource type="EventAsset" load_steps=4 format=3 uid="uid://cyy6drm56vbpi"]
 
-[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_rqe04"]
+[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_yfa7m"]
 data1 = 1347932293
 data2 = 3538821051
 
-[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_lb13d"]
+[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_d1erk"]
 name = "testparam"
-id = SubResource("FMOD_STUDIO_PARAMETER_ID_rqe04")
+id = SubResource("FMOD_STUDIO_PARAMETER_ID_yfa7m")
 maximum = 1.0
 guid = "{c993ae73-5301-4fd9-a2ec-d83eda350d8d}"
 
-[sub_resource type="ParameterAsset" id="ParameterAsset_d1s5f"]
-parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_lb13d")
+[sub_resource type="ParameterAsset" id="ParameterAsset_5tand"]
+parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_d1erk")
 path = "parameter:/testparam"
 guid = "{c993ae73-5301-4fd9-a2ec-d83eda350d8d}"
 name = "testparam"
 
 [resource]
+is_3d = true
 min_distance = 1.0
 max_distance = 20.0
 parameters = {
-"{c993ae73-5301-4fd9-a2ec-d83eda350d8d}": SubResource("ParameterAsset_d1s5f")
+"{c993ae73-5301-4fd9-a2ec-d83eda350d8d}": SubResource("ParameterAsset_5tand")
 }
-path = "event:/Sfx/Veggies/Cuke/cukeattacktest"
+path = "event:/sfx/veg/cuke/cukeattacktest"
 guid = "{144036a6-3e64-4a3e-a4fb-3c312ef66a33}"
 name = "cukeattacktest"
