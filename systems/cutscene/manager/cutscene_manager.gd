@@ -1,6 +1,8 @@
 extends CutsceneSystemClass
 class_name CutscenePlayerManager
 
+signal cutscene_signal(data: Dictionary)
+
 # when we *finallY* get typed dicts, this'll be a String:Node relationship.
 var actors : Dictionary
 

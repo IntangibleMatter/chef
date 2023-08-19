@@ -1,11 +1,9 @@
 extends PlayerState
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func enter(_msg: Dictionary = {}) -> void:
+	var attacksound: EventInstance = RuntimeManager.create_instance_path("event:/sfx/player/attack")
+	RuntimeManager.attach_instance_to_node(attacksound, player)
+	attacksound.start()
+	player.velocity.x += player.SPEED_BOOST_ATTACK * sign(player.velocity.x)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
