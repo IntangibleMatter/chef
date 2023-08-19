@@ -21,6 +21,9 @@ func physics_update(delta: float) -> void:
 	
 	if microstate == DUMMYSTATES.WALKTO:
 		dummy_walkto(target, delta)
+	
+	player.move_and_slide()
+
 
 
 func dummy_walkto(position: Vector2, delta: float) -> void:

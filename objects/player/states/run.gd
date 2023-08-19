@@ -5,8 +5,7 @@ func enter(_msg: Dictionary = {}) -> void:
 		player.velocity.y = -player.FORCE_JUMP if (
 			player.jump_buffer_timer < player.FRAMES_JUMP_BUFFER - 4
 			) else -player.FORCE_JUMP_SUPER
-		player.jump_buffer_timer = 0
-		state_machine.transition_to("Air", {"jump": true, "super": true})
+		state_machine.transition_to("Air", {"jump": true})
 
 
 func physics_update(delta: float) -> void:
@@ -29,3 +28,5 @@ func physics_update(delta: float) -> void:
 
 	if abs(player.velocity.x) > player.SPEED_MAX_RUN:
 		player.velocity.x = lerpf(player.velocity.x, player.SPEED_MAX_RUN * sign(player.velocity.x) , player.FORCE_FRICTION)
+	
+	player.move_and_slide()

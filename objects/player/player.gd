@@ -26,3 +26,7 @@ var coyote_timer : int = 0
 
 
 var last_speed_X : float = 0
+
+
+@onready var anim: AnimationNodeStateMachinePlayback = $AnimationTree.get("parameters/playback")
+@onready var sprite: Sprite2D = $Sprite2D

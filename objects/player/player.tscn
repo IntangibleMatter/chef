@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://xe2bumjp5k05"]
+[gd_scene load_steps=39 format=3 uid="uid://xe2bumjp5k05"]
 
 [ext_resource type="Script" path="res://objects/player/player.gd" id="1_7tbya"]
 [ext_resource type="Script" path="res://scripts/statemachine/state_machine.gd" id="2_1gy2y"]
@@ -10,7 +10,104 @@
 [ext_resource type="Script" path="res://objects/player/states/air_attack.gd" id="8_8caaq"]
 [ext_resource type="Texture2D" uid="uid://3gtur5yrw5ff" path="res://icon.svg" id="9_t3jgp"]
 
+[sub_resource type="Animation" id="Animation_qo8ly"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_8es30"]
+resource_name = "run"
+
+[sub_resource type="Animation" id="Animation_u7kqq"]
+resource_name = "jump"
+
+[sub_resource type="Animation" id="Animation_f1ps3"]
+resource_name = "fall"
+
+[sub_resource type="Animation" id="Animation_5b412"]
+resource_name = "start_jump"
+
+[sub_resource type="Animation" id="Animation_ukbew"]
+resource_name = "land"
+
+[sub_resource type="Animation" id="Animation_gou63"]
+resource_name = "off_ledge"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8kaaq"]
+_data = {
+"fall": SubResource("Animation_f1ps3"),
+"idle": SubResource("Animation_qo8ly"),
+"jump": SubResource("Animation_u7kqq"),
+"land": SubResource("Animation_ukbew"),
+"off_ledge": SubResource("Animation_gou63"),
+"run": SubResource("Animation_8es30"),
+"start_jump": SubResource("Animation_5b412")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ljyku"]
+animation = &"fall"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_guq5m"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4vpa4"]
+animation = &"jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_k83jn"]
+animation = &"land"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_liyp2"]
+animation = &"off_ledge"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dtxyg"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xiypq"]
+animation = &"start_jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_87u24"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ijoxs"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gg16v"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1icet"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6nt48"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7tt3r"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_v4ayl"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nqrrh"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rt035"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dkyqg"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_iwn35"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_nlcc1"]
+states/End/position = Vector2(1095, 100)
+states/Start/position = Vector2(194, 100)
+states/fall/node = SubResource("AnimationNodeAnimation_ljyku")
+states/fall/position = Vector2(682, -32)
+states/idle/node = SubResource("AnimationNodeAnimation_guq5m")
+states/idle/position = Vector2(325, 100)
+states/jump/node = SubResource("AnimationNodeAnimation_4vpa4")
+states/jump/position = Vector2(562, -53)
+states/land/node = SubResource("AnimationNodeAnimation_k83jn")
+states/land/position = Vector2(787, 9)
+states/off_ledge/node = SubResource("AnimationNodeAnimation_liyp2")
+states/off_ledge/position = Vector2(632, 64)
+states/run/node = SubResource("AnimationNodeAnimation_dtxyg")
+states/run/position = Vector2(556, 198)
+states/start_jump/node = SubResource("AnimationNodeAnimation_xiypq")
+states/start_jump/position = Vector2(427, 9)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_87u24"), "idle", "start_jump", SubResource("AnimationNodeStateMachineTransition_ijoxs"), "start_jump", "jump", SubResource("AnimationNodeStateMachineTransition_gg16v"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_1icet"), "fall", "land", SubResource("AnimationNodeStateMachineTransition_6nt48"), "land", "idle", SubResource("AnimationNodeStateMachineTransition_7tt3r"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_v4ayl"), "land", "run", SubResource("AnimationNodeStateMachineTransition_nqrrh"), "run", "start_jump", SubResource("AnimationNodeStateMachineTransition_rt035"), "run", "off_ledge", SubResource("AnimationNodeStateMachineTransition_dkyqg"), "off_ledge", "fall", SubResource("AnimationNodeStateMachineTransition_iwn35")]
+graph_offset = Vector2(-27, -124)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wqt7w"]
 atlas = ExtResource("9_t3jgp")
@@ -44,6 +141,9 @@ script = ExtResource("7_ihsbc")
 script = ExtResource("8_8caaq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8kaaq")
+}
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_nlcc1")
