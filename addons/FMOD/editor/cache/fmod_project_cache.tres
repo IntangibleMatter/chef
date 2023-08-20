@@ -1,4 +1,4 @@
-[gd_resource type="ProjectCache" load_steps=17 format=3 uid="uid://de1nabo40am34"]
+[gd_resource type="ProjectCache" load_steps=18 format=3 uid="uid://de1nabo40am34"]
 
 [ext_resource type="BankAsset" uid="uid://cg8nh0j34q508" path="res://addons/FMOD/editor/resources/banks/{65a3ed79-558c-4d58-9130-5df105a2f256}.tres" id="1_vf44w"]
 [ext_resource type="BankAsset" uid="uid://s51xuvj1p0v4" path="res://addons/FMOD/editor/resources/banks/{fdbecdad-24f7-011a-1779-d70ff451f4ce}.tres" id="2_e7de2"]
@@ -14,6 +14,7 @@
 [ext_resource type="EventAsset" uid="uid://dxhet7mdb6f41" path="res://addons/FMOD/editor/resources/events/{348db84d-27be-4001-811b-38951115e630}.tres" id="8_grl0p"]
 [ext_resource type="EventAsset" uid="uid://dhisk66nx7fh6" path="res://addons/FMOD/editor/resources/events/{427f558e-7158-4675-bed0-4552834977e5}.tres" id="9_bbv8c"]
 [ext_resource type="BusAsset" uid="uid://duys8ri6ymem2" path="res://addons/FMOD/editor/resources/busses/{ec04e966-888a-407f-9673-7f27674d4992}.tres" id="9_df3sj"]
+[ext_resource type="EventAsset" uid="uid://dg03hqy3duogp" path="res://addons/FMOD/editor/resources/events/{6cae24ff-2a6e-4478-a7f7-97b60bae3a6a}.tres" id="11_dholx"]
 [ext_resource type="EventAsset" uid="uid://cwujs0wwwx5kb" path="res://addons/FMOD/editor/resources/events/{a9f30754-ead2-4358-9ded-1674d70ab328}.tres" id="11_oxnhn"]
 [ext_resource type="EventAsset" uid="uid://25vops6kcyxy" path="res://addons/FMOD/editor/resources/snapshots/{69e10428-b340-4bbd-9d44-e5c58c596502}.tres" id="16_xb3w4"]
 
@@ -28,6 +29,7 @@ events = {
 "{144036a6-3e64-4a3e-a4fb-3c312ef66a33}": ExtResource("6_1ikws"),
 "{348db84d-27be-4001-811b-38951115e630}": ExtResource("8_grl0p"),
 "{427f558e-7158-4675-bed0-4552834977e5}": ExtResource("9_bbv8c"),
+"{6cae24ff-2a6e-4478-a7f7-97b60bae3a6a}": ExtResource("11_dholx"),
 "{758e262f-5d23-40ea-bab1-662b1a07499d}": ExtResource("7_lsfn1"),
 "{a9f30754-ead2-4358-9ded-1674d70ab328}": ExtResource("11_oxnhn")
 }
@@ -68,6 +70,24 @@ bank_tree = [{
 "resource": ExtResource("3_usvif")
 }]
 event_tree = [{
+"children": [{
+"children": [{
+"children": [],
+"item_type": 1,
+"node_name": "attack",
+"path": "event:/char/player/attack",
+"resource": ExtResource("11_dholx")
+}],
+"item_type": 7,
+"node_name": "player",
+"path": "",
+"resource": null
+}],
+"item_type": 7,
+"node_name": "char",
+"path": "",
+"resource": null
+}, {
 "children": [{
 "children": [],
 "item_type": 1,

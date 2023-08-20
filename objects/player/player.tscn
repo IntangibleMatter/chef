@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://xe2bumjp5k05"]
+[gd_scene load_steps=44 format=3 uid="uid://xe2bumjp5k05"]
 
 [ext_resource type="Script" path="res://objects/player/player.gd" id="1_7tbya"]
 [ext_resource type="Script" path="res://scripts/statemachine/state_machine.gd" id="2_1gy2y"]
@@ -10,20 +10,14 @@
 [ext_resource type="Script" path="res://objects/player/states/air_attack.gd" id="8_8caaq"]
 [ext_resource type="Texture2D" uid="uid://3gtur5yrw5ff" path="res://icon.svg" id="9_t3jgp"]
 
-[sub_resource type="Animation" id="Animation_qo8ly"]
-resource_name = "idle"
-
-[sub_resource type="Animation" id="Animation_8es30"]
-resource_name = "run"
-
-[sub_resource type="Animation" id="Animation_u7kqq"]
-resource_name = "jump"
-
 [sub_resource type="Animation" id="Animation_f1ps3"]
 resource_name = "fall"
 
-[sub_resource type="Animation" id="Animation_5b412"]
-resource_name = "start_jump"
+[sub_resource type="Animation" id="Animation_qo8ly"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_u7kqq"]
+resource_name = "jump"
 
 [sub_resource type="Animation" id="Animation_ukbew"]
 resource_name = "land"
@@ -31,14 +25,40 @@ resource_name = "land"
 [sub_resource type="Animation" id="Animation_gou63"]
 resource_name = "off_ledge"
 
+[sub_resource type="Animation" id="Animation_8es30"]
+resource_name = "run"
+
+[sub_resource type="Animation" id="Animation_5b412"]
+resource_name = "start_jump"
+
+[sub_resource type="Animation" id="Animation_dnofw"]
+resource_name = "air_attack"
+
+[sub_resource type="Animation" id="Animation_fbann"]
+resource_name = "air_attack_up"
+
+[sub_resource type="Animation" id="Animation_v7mk5"]
+resource_name = "air_attack_down"
+
+[sub_resource type="Animation" id="Animation_32lbi"]
+resource_name = "run_attack"
+
+[sub_resource type="Animation" id="Animation_op4ls"]
+resource_name = "attack"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8kaaq"]
 _data = {
+"air_attack": SubResource("Animation_dnofw"),
+"air_attack_down": SubResource("Animation_v7mk5"),
+"air_attack_up": SubResource("Animation_fbann"),
+"attack": SubResource("Animation_op4ls"),
 "fall": SubResource("Animation_f1ps3"),
 "idle": SubResource("Animation_qo8ly"),
 "jump": SubResource("Animation_u7kqq"),
 "land": SubResource("Animation_ukbew"),
 "off_ledge": SubResource("Animation_gou63"),
 "run": SubResource("Animation_8es30"),
+"run_attack": SubResource("Animation_32lbi"),
 "start_jump": SubResource("Animation_5b412")
 }
 

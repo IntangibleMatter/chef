@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+Audio="*res://systems/audio/audio_manager.gd"
 Data="*res://systems/data/data_manager.gd"
 CutsceneManager="*res://systems/cutscene/manager/cutscene_manager.gd"
 RuntimeManager="*res://addons/FMOD/runtime/runtime_manager.gd"
