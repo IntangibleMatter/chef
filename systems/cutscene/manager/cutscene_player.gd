@@ -18,6 +18,7 @@ var end := false
 
 func load_cutscene(cut: String) -> void:
 	reset_label_data()
+	CutsceneManager.refresh_actors()
 #	cutscene_labels.clear()
 	cutscene.clear()
 	var temp_split : PackedStringArray = cut.split("~", false)
@@ -44,6 +45,11 @@ func cutscene_loop() -> void:
 func parse_current_item() -> void:
 	var args: Array = convert_string_to_args(cutscene[label_index][index])
 	var type : String = str(args.pop_front())
+	var should_await : bool = type == "await"
+
+	if should_await:
+		type = str(args.pop_front())
+
 	match type:
 		"-":
 			handle_dialogue(args)
@@ -57,12 +63,13 @@ func parse_current_item() -> void:
 			handle_wait(args)
 		"signal":
 			handle_signal(args)
-		"await":
-			handle_await(args)
 		"set":
 			handle_set(args)
 		"move":
-			handle_move(args)
+			if should_await:
+				await handle_move(args)
+			else:
+				handle_move(args)
 		"setpos":
 			handle_setpos(args)
 		"match":
@@ -77,6 +84,11 @@ func parse_current_item() -> void:
 #######################
 ## UTILITY FUNCTIONS ##
 #######################
+
+func validate_actor(actor: String) -> bool:
+	if actors.has(actor):
+		return is_instance_valid(actors[actor])
+	return false
 
 func convert_string_to_args(item: String) -> Array:
 	var args := []
@@ -269,19 +281,31 @@ func handle_wait(args: Array) -> void:
 func handle_signal(args: Array) -> void:
 	pass
 
-func handle_setpos(args: Array) -> void:
-	pass
-  
-func handle_await(args: Array) -> void:
-	pass
 
+## Inputs: [actor: String, position: Vector2]
+func handle_setpos(args: Array) -> void:
+	if not validate_actor(args[0]): return
+	
+	var actor = actors[args[0]]
+
+	if actor.has_property("global_position"):
+		actor.global_position = args[1]
+  
 
 func handle_set(args: Array) -> void:
 	pass
 
-
+## Inputs: [actor: String, position: Vector2, time: float]
 func handle_move(args: Array) -> void:
-	pass
+	if not validate_actor(args[0]): return
+
+	var actor = actors[args[0]]
+	
+	if not actor.has_property("global_position"): return
+	
+	var tween = get_tree().create_tween()
+	tween.tween_property(actor, "global_position", args[1], args[2])
+	await tween.finished
 
 
 func handle_match(args: Array) -> void:
