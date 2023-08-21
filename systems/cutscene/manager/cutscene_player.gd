@@ -6,7 +6,9 @@ class_name CutscenePlayer
 ## is a different element in the array, and their names can be found with.
 var cutscene : Array[PackedStringArray]
 
-var actors : Dictionary = {}
+## mwahaha they're passed by reference rather than value!
+var actors : Dictionary = CutsceneManager.actors
+var dummies : Dictionary = CutsceneManager.dummies
 
 var current_label_brace_groups : PackedVector2Array = []
 
@@ -15,6 +17,7 @@ var index := 0
 
 # flag set when the cutscene player reaches an end command
 var end := false
+
 
 func load_cutscene(cut: String) -> void:
 	reset_label_data()
@@ -70,6 +73,11 @@ func parse_current_item() -> void:
 				await handle_move(args)
 			else:
 				handle_move(args)
+		"walkto":
+			if should_await:
+				await handle_walkto(args)
+			else:
+				handle_walkto(args)
 		"setpos":
 			handle_setpos(args)
 		"match":
@@ -85,9 +93,14 @@ func parse_current_item() -> void:
 ## UTILITY FUNCTIONS ##
 #######################
 
-func validate_actor(actor: String) -> bool:
-	if actors.has(actor):
-		return is_instance_valid(actors[actor])
+func validate_actor(actor: String, dummy = false) -> bool:
+	if not dummy:
+		if actors.has(actor):
+			return is_instance_valid(actors[actor])
+	else:
+		if dummies.has(actor):
+			return is_instance_valid(dummies[actor])
+	CutsceneManager.refresh_actors()
 	return false
 
 func convert_string_to_args(item: String) -> Array:
@@ -306,6 +319,19 @@ func handle_move(args: Array) -> void:
 	var tween = get_tree().create_tween()
 	tween.tween_property(actor, "global_position", args[1], args[2])
 	await tween.finished
+
+## Inputs: [actor: String, position: Vector2, timeout: float = 3.0]
+func handle_walkto(args: Array) -> void:
+	if not validate_actor(args[0], true): return
+	
+	var dummy = dummies[args[0]]
+
+	if not dummy.has_method("walkto"): return
+	
+	if args.size() < 3:
+		args[2] = 3.0 # default timeout
+	await dummy.walkto(args[1], args[2])
+
 
 
 func handle_match(args: Array) -> void:

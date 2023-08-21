@@ -5,14 +5,19 @@ signal cutscene_signal(data: Dictionary)
 
 # when we *finallY* get typed dicts, this'll be a String:Node relationship.
 var actors : Dictionary
+var dummies : Dictionary
+
+var cutscenes : Array#[CutscenePlayer]
 
 # Dicts are passed by reference so I don't need to worry about updating children.
 func poll_actors() -> void:
 	var possible_actors := get_tree().get_nodes_in_group("actor")
-	
+	var dummystates := get_tree().get_nodes_in_group("DummyState")
 	for actor in possible_actors:
 		if is_instance_valid(actor):
 			actors[actor.name] = actor
+			if actor.is_in_group("dummy"):
+				dummies[actor.name] = get_connected_dummy(actor, dummystates)
 	"""
 	var add_to_pool := func(identifier: String, actor: Node) -> void:
 		actors[identifier] = actor
@@ -23,16 +28,25 @@ func poll_actors() -> void:
 			act.add_self_to_cutscene_manager()
 	"""
 
+func get_connected_dummy(actor: Node, dummies: Array[Node]) -> DummyState:
+	for dummy in dummies:
+		if dummy.owner == actor:
+			return dummy
+	return DummyState.new()
+
 
 func clean_actor_list() -> void:
 	for actor in actors:
 		if not is_instance_valid(actors[actor]):
 			actors.erase(actor)
+			if dummies.has(actor):
+				dummies.erase(actor)
 
 
 func refresh_actors(total_clean : bool = false) -> void:
 	if total_clean:
 		actors.clear()
+		dummies.clear()
 	else:
 		clean_actor_list()
 	poll_actors()
