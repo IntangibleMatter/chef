@@ -41,12 +41,20 @@ func cutscene_loop() -> void:
 	# when changing labels
 	# handle all the index stuff here
 	while continue_cutscene():
-		parse_current_item()
+		await parse_item(cutscene[label_index][index])
+		index += 1
 	end_scene()
 
-
-func parse_current_item() -> void:
-	var args: Array = convert_string_to_args(cutscene[label_index][index])
+## This function is the *heart* of the cutscene system. It handles running all the subfunctions,
+## and it does the work of actually parsing the items. If you want to add something, *START HERE*.
+## 
+## This function takes `Variant` for its arg type, but it's really just String or Array. Should
+## just be string, but if we're recursing I don't want to waste any cycles on reconstructing
+## then immediately parsing a string.
+func parse_item(item: Variant) -> void:
+	# To avoid recalculating when something in here calls parse_item again, we check if it's a string. 
+	# If not, it *should* be an Array if everything is going as expected.
+	var args: Array = convert_string_to_args(item) if typeof(item) == TYPE_STRING else item
 	var type : String = str(args.pop_front())
 	var should_await : bool = type == "await"
 
@@ -55,7 +63,10 @@ func parse_current_item() -> void:
 
 	match type:
 		"-":
-			handle_dialogue(args)
+			if should_await: # inverted, we usually want to wait. Kinda weird to read but whatever.
+				handle_dialogue(args)
+			else:
+				await handle_dialogue(args)
 		"opt":
 			handle_opt(args)
 		">":
@@ -87,7 +98,6 @@ func parse_current_item() -> void:
 		"}", ";":
 			# do nothing
 			pass
-	index += 1
 
 #######################
 ## UTILITY FUNCTIONS ##
@@ -102,6 +112,14 @@ func validate_actor(actor: String, dummy = false) -> bool:
 			return is_instance_valid(dummies[actor])
 	CutsceneManager.refresh_actors()
 	return false
+
+
+func validate_signature(items: Array, ids: PackedInt32Array) -> bool:
+	for i in mini(items.size(), ids.size()):
+		if ids[i] == -1: continue
+		if typeof(items[i]) != ids[i]:
+			return false
+	return true
 
 func convert_string_to_args(item: String) -> Array:
 	var args := []
@@ -201,7 +219,8 @@ func handle_variable(item: String) -> Variant:
 	match item_split[0]:
 		"obj":
 			pass
-	return null
+	# If all else fails, just return the input we got. Worst case scenario is still better than null.
+	return item
 
 
 func find_label(label: String) -> int:
@@ -274,6 +293,8 @@ func handle_opt(args: Array) -> void:
 
 
 func jump_to(args: Array) -> void:
+	if not validate_signature(args, [TYPE_STRING]): return
+
 	var next_label := find_label(str(args[0]))
 	if next_label == -1:
 		end_scene()
@@ -310,6 +331,7 @@ func handle_set(args: Array) -> void:
 
 ## Inputs: [actor: String, position: Vector2, time: float]
 func handle_move(args: Array) -> void:
+	if not validate_signature(args, [TYPE_STRING, TYPE_VECTOR2, TYPE_FLOAT]): return
 	if not validate_actor(args[0]): return
 
 	var actor = actors[args[0]]
@@ -345,9 +367,8 @@ func end_scene() -> void:
 	else:
 		jump_to(PackedStringArray([">", "end"]))
 		index = 0
-		for i in cutscene[label_index].size() - 1:
-			parse_current_item()
-			index = i
+		for item in cutscene[label_index]:
+			parse_item(item)
 
 #######################
 ##   CAM FUNCTIONS   ##
