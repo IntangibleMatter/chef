@@ -10,6 +10,18 @@
 [ext_resource type="Script" path="res://objects/player/states/air_attack.gd" id="8_8caaq"]
 [ext_resource type="Texture2D" uid="uid://3gtur5yrw5ff" path="res://icon.svg" id="9_t3jgp"]
 
+[sub_resource type="Animation" id="Animation_dnofw"]
+resource_name = "air_attack"
+
+[sub_resource type="Animation" id="Animation_v7mk5"]
+resource_name = "air_attack_down"
+
+[sub_resource type="Animation" id="Animation_fbann"]
+resource_name = "air_attack_up"
+
+[sub_resource type="Animation" id="Animation_op4ls"]
+resource_name = "attack"
+
 [sub_resource type="Animation" id="Animation_f1ps3"]
 resource_name = "fall"
 
@@ -28,23 +40,11 @@ resource_name = "off_ledge"
 [sub_resource type="Animation" id="Animation_8es30"]
 resource_name = "run"
 
-[sub_resource type="Animation" id="Animation_5b412"]
-resource_name = "start_jump"
-
-[sub_resource type="Animation" id="Animation_dnofw"]
-resource_name = "air_attack"
-
-[sub_resource type="Animation" id="Animation_fbann"]
-resource_name = "air_attack_up"
-
-[sub_resource type="Animation" id="Animation_v7mk5"]
-resource_name = "air_attack_down"
-
 [sub_resource type="Animation" id="Animation_32lbi"]
 resource_name = "run_attack"
 
-[sub_resource type="Animation" id="Animation_op4ls"]
-resource_name = "attack"
+[sub_resource type="Animation" id="Animation_5b412"]
+resource_name = "start_jump"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8kaaq"]
 _data = {
