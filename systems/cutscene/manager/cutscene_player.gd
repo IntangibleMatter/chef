@@ -77,6 +77,9 @@ func parse_item(item: Variant) -> void:
 			handle_wait(args)
 		"signal":
 			handle_signal(args)
+		"waitfor":
+			# This is just always going to be waiting for something
+			await handle_waitfor(args)
 		"set":
 			handle_set(args)
 		"move":
@@ -314,6 +317,20 @@ func handle_wait(args: Array) -> void:
 
 func handle_signal(args: Array) -> void:
 	pass
+
+## Inputs: [event_name: String]
+func handle_waitfor(args: Array) -> void:
+	var correct_event : bool = false
+	
+	var checkevent := func(data: Dictionary):
+		correct_event = data.name == args[0]
+	
+	EventBus.event.connect(checkevent)
+
+	while not correct_event:
+		await EventBus.event
+	
+	return
 
 
 ## Inputs: [actor: String, position: Vector2]
