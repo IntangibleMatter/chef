@@ -2,7 +2,7 @@ extends Node
 class_name IntCutUtils
 
 func get_actor_closest_dialogue_screen_position(actor: Node2D, point: Vector2) -> Vector2:
-	var potential_points : PackedVector2Array
+	var potential_points : PackedVector2Array = []
 	
 	var points_of_box := get_actor_screen_box_points(actor)
 	

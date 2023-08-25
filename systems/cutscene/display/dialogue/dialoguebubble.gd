@@ -19,7 +19,7 @@ var bubble_points_base : PackedVector2Array
 ## Displayed bubble points.
 var bubble_points : PackedVector2Array # Displayed points. Updates.
 ## Colour of the dialogue bubble.
-var bubble_colour := Color.BLACK
+var bubble_colour := Color.WHITE
 ## Points used to draw the line between the speech bubble and the actor
 var tail_points : PackedVector2Array
 

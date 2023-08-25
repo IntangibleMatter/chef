@@ -9,6 +9,8 @@ var dummies : Dictionary
 
 var cutscenes : Array#[CutscenePlayer]
 
+@onready var cutscene_display := CutsceneDisplay.new()
+
 # Dicts are passed by reference so I don't need to worry about updating children.
 func poll_actors() -> void:
 	var possible_actors := get_tree().get_nodes_in_group("actor")
@@ -28,8 +30,8 @@ func poll_actors() -> void:
 			act.add_self_to_cutscene_manager()
 	"""
 
-func get_connected_dummy(actor: Node, dummies: Array[Node]) -> DummyState:
-	for dummy in dummies:
+func get_connected_dummy(actor: Node, new_dummies: Array[Node]) -> DummyState:
+	for dummy in new_dummies:
 		if dummy.owner == actor:
 			return dummy
 	return DummyState.new()
@@ -58,4 +60,8 @@ func add_cutscene(scene: Cutscene) -> void:
 			pass
 		1: # Exterenal file
 			pass
+
+
+func display_dialogue_line(actor: Node, emotion: int, line: String, c_player: CutscenePlayer) -> void:
+	pass
 

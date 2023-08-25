@@ -1,8 +1,3 @@
-key,en,_speaker,_notes,_triggers
-,I’m not real,bard,,
-,"Of course you’re real, you’re standing in front of me",ari,,
-,"No, you don’t understand. [shake level=30]I’m| not| real|[/shake]",bard,,
-,I don’t [wave amp=30]feel real[/wave],‘’,,
-,I don’t do| any of the things a teenager is [wave amp=30]supposed to do[/wave],'’,,
-,"I don’t hang out with people,| I don’t [shake level=20]try new things,[/shake]| I don’t even [wave amp=40 freq=2.0]hang out with my friends[/wave]",'’,,
-,I’m[[0]]...|| I’m [shake level=20][[1]]not| [[2]]a real|[[3]] teenager[/shake],,,0 triggers an animation that makes bard start to glitch out. Each successive one increases the effect
+key,en,_speaker,_notes
+default_name,Paprika,,The default player name
+

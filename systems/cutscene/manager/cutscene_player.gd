@@ -223,6 +223,25 @@ func handle_variable(item: String) -> Variant:
 	return item
 
 
+func format_text_for_dialogue(line_id: String) -> String:
+	var formatted : String
+	var translated : String = tr(line_id)
+	
+	if translated.contains("{{"):
+		var split: PackedStringArray = []
+		for line in tr(line_id).split("{{"):
+			split.append_array(line.split("}}"))
+		
+		for i in split.size():
+			if i % 2 == 0:
+				formatted = formatted + split[i]
+			else:
+				formatted += str(handle_variable(split[i]))
+	
+	formatted = formatted.replace("\\n", "\n")
+
+	return formatted
+
 func find_label(label: String) -> int:
 	for cut in cutscene.size():
 		if cutscene[cut][0] == label:
@@ -284,8 +303,9 @@ func reset_label_data() -> void:
 ## HANDLER FUNCTIONS ##
 #######################
 
+## Inputs: [actor: String, emotion: int, line: String]
 func handle_dialogue(args: Array) -> void:
-	pass
+	CutsceneManager.display_dialogue_line(actors[args[0]], args[1], format_text_for_dialogue(args[2]), self)
 
 
 func handle_opt(args: Array) -> void:

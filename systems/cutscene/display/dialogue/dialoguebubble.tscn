@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5m7fxocltqea"]
+[gd_scene load_steps=2 format=3 uid="uid://bpk8f83b6hdig"]
 
 [ext_resource type="Script" path="res://systems/cutscene/display/dialogue/dialoguebubble.gd" id="1_lva7k"]
 
@@ -13,5 +13,23 @@ script = ExtResource("1_lva7k")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 640.0
+offset_bottom = 23.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]This one is for the boys with the boomin' system
+Top down, AC with the cooler system
+When he come up in the club, he be blazin' up
+Got stacks on deck like he savin' up
+And he ill, he real, he might gotta deal
+He pop bottles and he got the right kind of build
+He cold, he dope, he might sell coke
+He always in the air, but he never fly coach
+He a mothafuckin trip, trip, sailor of the ship, ship
+When he make it drip, drip, kiss him on the lip, lip
+That's the kinda dude I was lookin' for
+And yes, you'll get slapped if you're lookin', ho"
+fit_content = true
+scroll_active = false
+visible_characters_behavior = 1
