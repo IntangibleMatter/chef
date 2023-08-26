@@ -191,6 +191,7 @@ advance_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lumea"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_36mso"]
+switch_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1ilyp"]
 switch_mode = 2
@@ -203,19 +204,20 @@ advance_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8h8xd"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_olmt6"]
+switch_mode = 1
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_gmw8i"]
 states/RESET/node = SubResource("AnimationNodeAnimation_ghes6")
 states/RESET/position = Vector2(320, 141)
 states/Start/position = Vector2(148, 141)
 states/hide_speaker_bottom/node = SubResource("AnimationNodeAnimation_qy2hk")
-states/hide_speaker_bottom/position = Vector2(700, 187)
+states/hide_speaker_bottom/position = Vector2(720, 201)
 states/hide_speaker_top/node = SubResource("AnimationNodeAnimation_ryeiw")
-states/hide_speaker_top/position = Vector2(678, 71)
+states/hide_speaker_top/position = Vector2(720, 71)
 states/show_speaker_bottom/node = SubResource("AnimationNodeAnimation_gxxoh")
-states/show_speaker_bottom/position = Vector2(471, 187)
+states/show_speaker_bottom/position = Vector2(492, 201)
 states/show_speaker_top/node = SubResource("AnimationNodeAnimation_mulgh")
-states/show_speaker_top/position = Vector2(477, 71)
+states/show_speaker_top/position = Vector2(492, 71)
 transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_iqvnr"), "RESET", "show_speaker_top", SubResource("AnimationNodeStateMachineTransition_lumea"), "show_speaker_top", "hide_speaker_top", SubResource("AnimationNodeStateMachineTransition_36mso"), "hide_speaker_top", "RESET", SubResource("AnimationNodeStateMachineTransition_1ilyp"), "hide_speaker_bottom", "RESET", SubResource("AnimationNodeStateMachineTransition_r1ljd"), "RESET", "show_speaker_bottom", SubResource("AnimationNodeStateMachineTransition_8h8xd"), "show_speaker_bottom", "hide_speaker_bottom", SubResource("AnimationNodeStateMachineTransition_olmt6")]
 
 [sub_resource type="Animation" id="Animation_k6jl3"]
@@ -224,19 +226,19 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Background/RichTextLabel:position:x")
+tracks/0/path = NodePath("Background/CenterAlign:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [16.0]
+"values": [Vector2(16, 8)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Background/RichTextLabel:size")
+tracks/1/path = NodePath("Background/CenterAlign:size")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -301,19 +303,19 @@ step = 0.15
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Background/RichTextLabel:position:x")
+tracks/0/path = NodePath("Background/CenterAlign:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [16.0]
+"values": [Vector2(16, 8)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Background/RichTextLabel:size")
+tracks/1/path = NodePath("Background/CenterAlign:size")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -362,24 +364,23 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_8nh4f"]
 resource_name = "speaker_left"
 length = 0.001
-loop_mode = 1
 step = 0.15
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Background/RichTextLabel:position:x")
+tracks/0/path = NodePath("Background/CenterAlign:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [112.0]
+"values": [Vector2(112, 8)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Background/RichTextLabel:size")
+tracks/1/path = NodePath("Background/CenterAlign:size")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -443,6 +444,7 @@ theme = ExtResource("1_5b0b2")
 script = ExtResource("2_tans2")
 
 [node name="Background" type="NinePatchRect" parent="."]
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -461,7 +463,6 @@ patch_margin_bottom = 16
 axis_stretch_horizontal = 1
 
 [node name="TextureRect" type="TextureRect" parent="Background"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -474,19 +475,25 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AnimatedTexture_3awrc")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Background"]
+[node name="CenterAlign" type="VBoxContainer" parent="Background"]
+clip_contents = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 16.0
+offset_left = 112.0
 offset_top = 8.0
 offset_right = -16.0
 offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Background/CenterAlign"]
+layout_mode = 2
+size_flags_vertical = 6
 bbcode_enabled = true
-text = "[center]This is a test of the [wave amp=20 rate=10]dialogue boxes in this game, isn't it obvious?[/wave]"
+text = "test"
+fit_content = true
 scroll_active = false
 shortcut_keys_enabled = false
 visible_characters_behavior = 1
