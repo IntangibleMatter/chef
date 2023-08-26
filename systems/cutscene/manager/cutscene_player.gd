@@ -19,6 +19,10 @@ var index := 0
 var end := false
 
 
+func _ready() -> void:
+	EventBus.skip_cutscene.connect()
+
+
 func load_cutscene(cut: String) -> void:
 	reset_label_data()
 	CutsceneManager.refresh_actors()
@@ -37,9 +41,6 @@ func load_cutscene(cut: String) -> void:
 
 
 func cutscene_loop() -> void:
-	# TODO: figure out where to increase index to avoid off by one errors
-	# when changing labels
-	# handle all the index stuff here
 	while continue_cutscene():
 		await parse_item(cutscene[label_index][index])
 		index += 1
@@ -215,15 +216,49 @@ func tokenize(item: String) -> PackedStringArray:
 	return tokens
 
 
+func cast_to_native_type(item: String) -> Variant:
+	# This code will throw some errors. Unavoidable, if it doesn't crash it's fine.
+	var expr := Expression.new()
+	var err := expr.parse(item)
+	if err != OK:
+		return item
+	var val : Variant = expr.execute([], self)
+	if expr.has_execute_failed():
+		return item
+	return val
+
+
+
 func handle_variable(item: String) -> Variant:
-	var item_split : PackedStringArray = item.replace("$", "").split(".", false)
-	if item_split.size() == 1:
-		return Data.save_get(item)
+	# yes this is stupid, no I don't care.
+	var item_split : PackedStringArray = item.replace("$", "$.").replace("[", ".").replace("]", ".").split(".", false)
 	match item_split[0]:
+		"$":
+			var data : Variant = Data.save_get(item_split[1])
+			match item_split.size():
+				2:
+					return data
+				3:
+					return data[cast_to_native_type(item_split[2])]
+				4:
+					return data[cast_to_native_type(item_split[2])][cast_to_native_type(item_split[3])]
+
 		"obj":
-			pass
-	# If all else fails, just return the input we got. Worst case scenario is still better than null.
-	return item
+			if validate_actor(item_split[1]):
+				var actor : Node = actors[item_split[1]]
+				for property in actor.get_property_list():
+					if property.name == item_split[2]:
+						match item_split.size():
+							2:
+								return actor.get(item_split[1])
+							3:
+								return actor.get(item_split[1])[cast_to_native_type(item_split[2])]
+							4:
+								# if you do more than this, fuck off. There's a better way. This is already reaching.
+								return actor.get(item_split[1])[cast_to_native_type(item_split[2])][cast_to_native_type(item_split[3])]
+
+				
+	return null
 
 
 func format_text_for_dialogue(line_id: String) -> String:
@@ -314,7 +349,7 @@ func handle_dialogue(args: Array) -> void:
 func handle_opt(args: Array) -> void:
 	pass
 
-
+## Inputs [label: String]
 func jump_to(args: Array) -> void:
 	if not validate_signature(args, [TYPE_STRING]): return
 
@@ -396,16 +431,22 @@ func handle_walkto(args: Array) -> void:
 func handle_match(args: Array) -> void:
 	pass
 
-
-func end_scene() -> void:
-	if find_label("end") == -1:
-		# handle scene end
-		pass
-	else:
-		jump_to(PackedStringArray([">", "end"]))
+func skip_scene() -> void:
+	CutsceneManager.force_end_dialogue(true)
+	if not find_label("skip") == -1:
+		jump_to(["skip"])
 		index = 0
 		for item in cutscene[label_index]:
 			parse_item(item)
+	# handle all the other skip stuff
+
+func end_scene() -> void:
+	if not find_label("end") == -1:
+		jump_to(["end"])
+		index = 0
+		for item in cutscene[label_index]:
+			parse_item(item)
+	# handle scene end properly
 
 #######################
 ##   CAM FUNCTIONS   ##
