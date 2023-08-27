@@ -9,7 +9,12 @@ var dummies : Dictionary
 
 var cutscenes : Array#[CutscenePlayer]
 
-@onready var cutscene_display := CutsceneDisplay.new()
+var cutscene_display : CutsceneDisplay
+
+
+func _ready() -> void:
+	cutscene_display = CutsceneDisplay.new()
+	add_sibling(cutscene_display)
 
 # Dicts are passed by reference so I don't need to worry about updating children.
 func poll_actors() -> void:
@@ -63,5 +68,9 @@ func add_cutscene(scene: Cutscene) -> void:
 
 
 func display_dialogue_line(actor: Node, emotion: int, line: String, c_player: CutscenePlayer) -> void:
+	pass
+
+
+func close_dialogue(immediate: bool = false) -> void:
 	pass
 

@@ -19,8 +19,17 @@ var index := 0
 var end := false
 
 
+# vars to track how dialogue is working
+
+var in_dialogue := false
+var current_speaker : String
+
+
+var items_which_can_wait : PackedStringArray = ["-", "wait", "waitfor", "opt", "move", "cam"]
+
+
 func _ready() -> void:
-	EventBus.skip_cutscene.connect()
+	EventBus.skip_cutscene.connect(skip_scene.bind())
 
 
 func load_cutscene(cut: String) -> void:
@@ -58,9 +67,12 @@ func parse_item(item: Variant) -> void:
 	var args: Array = convert_string_to_args(item) if typeof(item) == TYPE_STRING else item
 	var type : String = str(args.pop_front())
 	var should_await : bool = type == "await"
+	
 
 	if should_await:
 		type = str(args.pop_front())
+
+	close_dialogue_check(should_await, type)
 
 	match type:
 		"-":
@@ -97,6 +109,8 @@ func parse_item(item: Variant) -> void:
 			handle_setpos(args)
 		"match":
 			handle_match(args)
+		"setstate":
+			handle_setstate(args)
 		"cam":
 			cam_parser(args)
 		"}", ";":
@@ -124,6 +138,7 @@ func validate_signature(items: Array, ids: PackedInt32Array) -> bool:
 		if typeof(items[i]) != ids[i]:
 			return false
 	return true
+
 
 func convert_string_to_args(item: String) -> Array:
 	var args := []
@@ -214,6 +229,21 @@ func tokenize(item: String) -> PackedStringArray:
 			exclude_current = false
 	
 	return tokens
+
+
+func close_dialogue_check(waitfor: bool, item: String) -> void:
+	if not in_dialogue:
+		return
+	
+	if item in items_which_can_wait:
+		if waitfor:
+			if not item == "-":
+				CutsceneManager.close_dialogue()
+			return
+		else:
+			if item in ["waitfor", "wait"]:
+				CutsceneManager.close_dialogue()
+	
 
 
 func cast_to_native_type(item: String) -> Variant:
@@ -427,9 +457,21 @@ func handle_walkto(args: Array) -> void:
 	await dummy.walkto(args[1], args[2])
 
 
-
 func handle_match(args: Array) -> void:
 	pass
+
+## Inputs: [actor, String, state: String]
+func handle_setstate(args: Array) -> void:
+	if not validate_actor(args[0]): return
+
+	var actor = actors[args[0]]
+	var msg : Dictionary
+	if args.size() > 2:
+		msg = args[2] if typeof(args[2]) == TYPE_DICTIONARY else {}
+	if actor.has_group("has_statemachine"):
+		actor.get_node("StateMachine").transition_to(str(args[1]), msg)
+
+
 
 func skip_scene() -> void:
 	CutsceneManager.force_end_dialogue(true)

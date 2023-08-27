@@ -11,6 +11,8 @@ signal transitioned(state_name: String)
 
 func _ready() -> void:
 	await owner.ready
+	
+	owner.add_to_group("has_statemachine")
 
 	for child in get_children():
 		if child.has_meta("state_machine"):
