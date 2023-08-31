@@ -13,3 +13,4 @@ addons/FMOD/native/lib/* filter=lfs diff=lfs merge=lfs -text
 *.aup3 filter=lfs diff=lfs merge=lfs -text
 *.pdc filter=lfs diff=lfs merge=lfs -text
 *.png filter=lfs diff=lfs merge=lfs -text
+design/demoimg/* filter=lfs diff=lfs merge=lfs -text
