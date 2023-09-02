@@ -22,6 +22,8 @@ Data="*res://systems/data/data_manager.gd"
 CutsceneManager="*res://systems/cutscene/manager/cutscene_manager.gd"
 RuntimeManager="*res://addons/FMOD/runtime/runtime_manager.gd"
 EventBus="*res://scripts/event_bus.gd"
+Utils="*res://scripts/utils.gd"
+Settings="*res://systems/data/settings.gd"
 
 [display]
 
