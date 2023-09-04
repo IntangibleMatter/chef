@@ -1,3 +1,14 @@
 key,en,_speaker,_notes
 default_name,Paprika,,The default player name
+sous_name,Clove,,The default sous chef name. May be overriden if the player choses this as the name.
+menu_settings,Settings,,
+menu_settings_volume_master,Master Volume,,
+menu_settings_volume_sfx,Sounds Volume,,
+menu_settings_volume_music,Music Volume,,
+menu_play,Start Cooking,,
+menu_quit,Quit,,
+menu_confirm,Okay,,
+menu_cancel,Nope,,
+save_menu_select,Select a Kitchen,,
+save_menu_copy,Select a file to copy,,
 
