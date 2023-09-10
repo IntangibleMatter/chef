@@ -3,7 +3,7 @@ extends Resource
 
 enum CUTSCENE_FROM { TEXT, FILE }
 
-@export var characters : Array[Character]
+@export var characters : Array[Actor]
 
 @export_subgroup("Contents")
 @export var text_type : CUTSCENE_FROM = CUTSCENE_FROM.TEXT

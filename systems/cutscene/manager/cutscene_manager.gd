@@ -13,6 +13,7 @@ var cutscene_display : CutsceneDisplay
 
 
 func _ready() -> void:
+	await get_tree().process_frame
 	cutscene_display = CutsceneDisplay.new()
 	add_sibling(cutscene_display)
 

@@ -13,10 +13,9 @@ func _ready() -> void:
 	await owner.ready
 	
 	owner.add_to_group("has_statemachine")
-
+	
 	for child in get_children():
-		if child.has_meta("state_machine"):
-			child.state_machine = self
+		child.state_machine = self
 	
 	state.enter()
 
@@ -37,7 +36,8 @@ func transition_to(target_state : String, msg: Dictionary = {}) -> void:
 	# Just gotta check that the state exists lol
 	if not has_node(target_state):
 		return
-	
+	print(target_state)
+	prints("msg", msg)
 	state.exit()
 	state = get_node(target_state)
 	state.enter(msg)
