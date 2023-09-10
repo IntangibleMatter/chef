@@ -1,6 +1,7 @@
 key,en,_speaker,_notes
-default_name,Paprika,,The default player name
+default_name,Rhubarb,,The default player name
 sous_name,Clove,,The default sous chef name. May be overriden if the player choses this as the name.
+sous_alt_name,Cilantro,,"Best name I could think of at 11:19 pm, whatever"
 menu_settings,Settings,,
 menu_settings_volume_master,Master Volume,,
 menu_settings_volume_sfx,Sounds Volume,,

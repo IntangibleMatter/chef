@@ -5,8 +5,9 @@ const FORCE_JUMP : float = -400.0
 const FORCE_JUMP_SUPER : float = -600.0
 
 const FORCE_ACCELERATION : float = 256.0
-const SPEED_MAX_RUN : float = 96.0
+const SPEED_MAX_RUN : float = 196.0
 const FORCE_FRICTION : float = 0.4
+const FORCE_FRICTION_AIR : float = 0.1
 
 const GRAVITY_MULTIPLIER : float = 1.2
 const GRAVITY_MULTIPLIER_FASTFALL : float = 1.4
@@ -25,7 +26,7 @@ var jump_buffer_timer : int = 0
 var coyote_timer : int = 0
 
 
-var last_speed_X : float = 0
+var last_speed_x : float = 0
 
 
 @onready var anim: AnimationNodeStateMachinePlayback = $AnimationTree.get("parameters/playback")
