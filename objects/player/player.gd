@@ -20,7 +20,7 @@ var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 # frame countdowns
 const FRAMES_JUMP_BUFFER : int = 10
-const FRAMES_COYOTE : int = 10
+const FRAMES_COYOTE : int = 7
 
 var jump_buffer_timer : int = 0
 var coyote_timer : int = 0

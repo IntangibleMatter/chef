@@ -22,6 +22,8 @@ func physics_update(delta: float) -> void:
 
 	if direction == 0:
 		player.velocity.x = lerpf(player.velocity.x, 0, player.FORCE_FRICTION)
+		if is_equal_approx(player.velocity.x, 0):
+			player.last_speed_x = 0
 	elif sign(direction) != sign(player.velocity.x):
 		if abs(player.last_speed_x) > 0:
 			player.velocity.x = lerpf(player.velocity.x, 0, player.FORCE_FRICTION)

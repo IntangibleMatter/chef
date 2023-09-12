@@ -17,12 +17,12 @@ func handle_input(event: InputEvent) -> void:
 func physics_update(delta: float) -> void:
 	player.coyote_timer -= 1
 	player.jump_buffer_timer -= 1
-	
+	print(player.coyote_timer)
 	if player.is_on_floor():
 		state_machine.transition_to("Idle")
 	
 	if Input.is_action_just_pressed("player_jump") and player.coyote_timer > 0:
-		player.velocity.y = -player.FORCE_JUMP
+		player.velocity.y = player.FORCE_JUMP
 		player.coyote_timer = 0
 	
 	var grav_multiplier : float = 1.0 if player.velocity.y < 0 else player.GRAVITY_MULTIPLIER
@@ -31,7 +31,6 @@ func physics_update(delta: float) -> void:
 	player.velocity.y += player.gravity * grav_multiplier * delta
 
 	var direction := Input.get_action_strength("player_right") - Input.get_action_strength("player_left")
-	print(direction)
 	
 	if direction == 0:
 		player.velocity.x = lerpf(player.velocity.x, 0, player.FORCE_FRICTION_AIR)
@@ -40,8 +39,6 @@ func physics_update(delta: float) -> void:
 			player.velocity.x = lerpf(player.velocity.x, 0, player.FORCE_FRICTION_)
 		if abs(player.velocity.x) < 0.2 * player.last_speed_x:
 			player.velocity.x = -player.last_speed_x * 0.5
-	
-	print(player.velocity)
 
 	player.move_and_slide()
 
