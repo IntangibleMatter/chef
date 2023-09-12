@@ -60,12 +60,12 @@ func refresh_actors(total_clean : bool = false) -> void:
 	poll_actors()
 
 
-func add_cutscene(scene: Cutscene) -> void:
-	match scene.text_type:
-		0: # Embedded text
-			pass
-		1: # Exterenal file
-			pass
+#func add_cutscene(scene: Cutscene) -> void:
+#	match scene.text_type:
+#		0: # Embedded text
+#			pass
+#		1: # Exterenal file
+#			pass
 
 
 func display_dialogue_line(actor: Node, emotion: int, line: String, c_player: CutscenePlayer) -> void:

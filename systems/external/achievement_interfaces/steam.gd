@@ -1,0 +1,2 @@
+class_name SteamAchievementInterface
+extends AchievementInterface

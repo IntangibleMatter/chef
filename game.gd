@@ -1,6 +1,7 @@
 extends Node
 
 var curr_scene : Node
+var curr_scene_hold : Node
 var current_scene_path : String
 
 signal scene_spawned(scene: String)
@@ -9,7 +10,7 @@ func change_scene(scene: String, msg : Dictionary = {}) -> void:
 	# TODO: This should be moved to a thread, to avoid lag spikes. Shouldn't be too much of an issue.
 	var scn : Node
 	
-	if FileAccess.is_path_valid(scene):
+	if FileAccess.file_exists(scene):
 		scn = load(scene).instantiate()
 	else:
 		return
