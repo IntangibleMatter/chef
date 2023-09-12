@@ -7,7 +7,9 @@ const FORCE_JUMP_SUPER : float = -600.0
 const FORCE_ACCELERATION : float = 256.0
 const SPEED_MAX_RUN : float = 196.0
 const FORCE_FRICTION : float = 0.4
+const FORCE_FRICTION_TURNING : float = 0.6
 const FORCE_FRICTION_AIR : float = 0.1
+const TURNAROUND_SPEED_REGAIN : float = 0.6
 
 const GRAVITY_MULTIPLIER : float = 1.2
 const GRAVITY_MULTIPLIER_FASTFALL : float = 1.4

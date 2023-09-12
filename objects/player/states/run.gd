@@ -26,9 +26,9 @@ func physics_update(delta: float) -> void:
 			player.last_speed_x = 0
 	elif sign(direction) != sign(player.velocity.x):
 		if abs(player.last_speed_x) > 0:
-			player.velocity.x = lerpf(player.velocity.x, 0, player.FORCE_FRICTION)
+			player.velocity.x = lerpf(player.velocity.x, 0, player.FORCE_FRICTION_TURNING)
 		if abs(player.velocity.x) < 0.2 * player.last_speed_x:
-			player.velocity.x = -player.last_speed_x * 0.5
+			player.velocity.x = -player.last_speed_x * player.TURNAROUND_SPEED_REGAIN
 
 	
 	player.velocity.x += player.FORCE_ACCELERATION * direction * delta
