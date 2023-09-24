@@ -12,6 +12,7 @@ func handle_input(_event: InputEvent) -> void:
 		state_machine.transition_to("RunAttack")
 
 func physics_update(_delta: float) -> void:
+	player.coyote_timer = player.FRAMES_COYOTE * Settings.accessibility.coyote_time_scale
 	if not player.is_on_floor():
 		state_machine.transition_to("Air")
 

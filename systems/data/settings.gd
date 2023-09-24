@@ -15,6 +15,7 @@ var accessibility : Dictionary = {
 	"time_scale": 1.0,
 	"damage_scale": 1.0,
 	"screenshake": 1.0,
+	"coyote_time_scale" : 1.0,
 }
 
 func save_settings() -> void:

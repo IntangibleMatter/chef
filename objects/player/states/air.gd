@@ -36,7 +36,7 @@ func physics_update(delta: float) -> void:
 		else:
 			state_machine.transition_to("Idle")
 	
-	if Input.is_action_just_pressed("player_jump") and player.coyote_timer > 0:
+	if Input.is_action_just_pressed("player_jump") and player.coyote_timer  > 0:
 		player.velocity.y = player.FORCE_JUMP
 		player.coyote_timer = 0
 	
