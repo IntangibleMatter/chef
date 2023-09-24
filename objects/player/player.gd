@@ -1,10 +1,11 @@
 class_name Player
 extends CharacterBody2D
 
-const FORCE_JUMP : float = -400.0
-const FORCE_JUMP_SUPER : float = -600.0
+const FORCE_JUMP : float = -450.0
+#const FORCE_JUMP_SUPER : float = -600.0
 
 const FORCE_ACCELERATION : float = 256.0
+const FORCE_ACCELERATION_AIR : float = 200.0
 const SPEED_MAX_RUN : float = 196.0
 const FORCE_FRICTION : float = 0.4
 const FORCE_FRICTION_TURNING : float = 0.6
@@ -21,7 +22,7 @@ var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 # frame countdowns
-const FRAMES_JUMP_BUFFER : int = 10
+const FRAMES_JUMP_BUFFER : int = 16
 const FRAMES_COYOTE : int = 7
 
 var jump_buffer_timer : int = 0

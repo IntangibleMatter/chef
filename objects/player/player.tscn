@@ -130,7 +130,7 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-27, -124)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thsj3"]
-size = Vector2(16, 64)
+size = Vector2(16, 62)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_7tbya")
@@ -171,5 +171,5 @@ position = Vector2(0, -37)
 texture = ExtResource("9_eyetv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -32)
+position = Vector2(0, -31)
 shape = SubResource("RectangleShape2D_thsj3")
