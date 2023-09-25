@@ -10,6 +10,8 @@ var cutscene : Array[PackedStringArray]
 var actors : Dictionary = CutsceneManager.actors
 var dummies : Dictionary = CutsceneManager.dummies
 
+var resources : Dictionary = {}
+
 var current_label_brace_groups : PackedVector2Array = []
 
 var label_index := 0
