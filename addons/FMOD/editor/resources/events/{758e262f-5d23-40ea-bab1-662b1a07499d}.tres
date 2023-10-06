@@ -1,10 +1,10 @@
-[gd_resource type="EventAsset" format=3 uid="uid://cw155uwymodwn"]
+[gd_resource type="EventAsset" format=3 uid="uid://djvb2iqpmkxf2"]
 
 [resource]
 is_3d = true
 is_oneshot = true
 min_distance = 1.0
 max_distance = 20.0
-path = "event:/sfx/veg/cuke/hit"
+path = "event:/obj/veg/cuke/hit"
 guid = "{758e262f-5d23-40ea-bab1-662b1a07499d}"
 name = "hit"

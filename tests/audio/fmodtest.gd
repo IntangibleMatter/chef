@@ -6,16 +6,17 @@ var pause : EventInstance
 var mus_vol : Bus
 
 func _ready() -> void:
-	pause = RuntimeManager.create_instance_path("snapshot:/pause_game")
-	mus_vol = FMODStudioModule.get_studio_system().get_bus("bus:/music")
+	pause = FMODRuntime.create_instance_path("snapshot:/pause_game")
+	mus_vol = FMODStudioModule.get_studio_system().get_bus("bus:/music:q
+	")
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_up"):
 		print(';asdkj')
-		var inst := RuntimeManager.create_instance_id("event:/obj/veg/cuke/cukeattacktest")
+		var inst := FMODRuntime.create_instance_id("event:/obj/veg/cuke/cukeattacktest")
 		print(inst)
-		RuntimeManager.attach_instance_to_node(inst, self)
-		print(RuntimeManager.attached_instances)
+		FMODRuntime.attach_instance_to_node(inst, self)
+		print(FMODRuntime.attached_instances)
 		inst.start()
 	if event.is_action_pressed("ui_left"):
 		pause.start()

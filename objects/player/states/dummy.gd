@@ -1,5 +1,4 @@
 extends DummyState
-
 var player : Player
 
 signal walkto_done

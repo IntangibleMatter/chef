@@ -10,7 +10,7 @@ func handle_input(event: InputEvent) -> void:
 
 
 func physics_update(delta: float) -> void:
-	player.coyote_timer = player.FRAMES_COYOTE * Settings.accessibility.coyote_time_scale
+	player.coyote_timer = player.TIME_COYOTE * Settings.accessibility.coyote_time_scale
 	if not player.is_on_floor():
 		state_machine.transition_to("Air")
 
@@ -21,10 +21,12 @@ func physics_update(delta: float) -> void:
 	var direction := Input.get_action_strength("player_right") - Input.get_action_strength("player_left")
 	
 	prints("v", player.velocity.x)
+	prints("d", direction)
 	if direction == 0:
 		print("A")
 		player.velocity.x = lerpf(player.velocity.x, 0, player.FORCE_FRICTION)
-		if is_equal_approx(player.velocity.x, 0):
+		if abs(player.velocity.x) <= 0.001:
+			player.velocity.x = 0
 			player.last_speed_x = 0
 	elif sign(direction) != sign(player.velocity.x) and abs(player.velocity.x) > 0:
 		print("B")

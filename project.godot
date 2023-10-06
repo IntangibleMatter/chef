@@ -20,10 +20,10 @@ config/icon="res://icon.svg"
 Audio="*res://systems/audio/audio_manager.gd"
 Data="*res://systems/data/data_manager.gd"
 CutsceneManager="*res://systems/cutscene/manager/cutscene_manager.gd"
-RuntimeManager="*res://addons/FMOD/runtime/runtime_manager.gd"
 EventBus="*res://scripts/event_bus.gd"
 Utils="*res://scripts/utils.gd"
 Settings="*res://systems/data/settings.gd"
+FMODRuntime="*res://addons/FMOD/runtime/fmod_runtime_manager.gd"
 
 [display]
 
@@ -33,7 +33,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/FMOD/plugin.cfg")
+enabled=PackedStringArray("res://addons/FMOD/plugin.cfg", "res://addons/r_tex_packer_importer/plugin.cfg")
 
 [fmod]
 
@@ -102,6 +102,11 @@ player_down={
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":1.0,"script":null)
 ]
 }
+
+[r_tex_packer]
+
+import_xml=false
+import_json=false
 
 [rendering]
 
